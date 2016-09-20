@@ -1,6 +1,7 @@
 ﻿Public Class frm_addClientes
     Dim msj_errorTipoDato As String = "Por favor, ingrese solo numeros en el campo telefono"
     Dim error_title As String = "Error"
+    'la bandera sirve para saber si estamos en modo editar o en modo añadir'
     Property bandera As Boolean = True
     Dim cli As Cliente = New Cliente()
 
@@ -14,7 +15,10 @@
     End Sub
 
     Public Sub modoEditar(ByVal client As Cliente)
+        'bandera en falso significa que es modo editar, por default esta en modo añadir (true)'
         bandera = False
+        'pasamos los datos del cliente que entro por parametro a los text fields'
+        'tambien seteamos el cliente de la clase (para usarlo despues)'
         cli = client
         txt_nombre.Text = cli.nombre
         txt_apellido.Text = cli.apellido
@@ -24,19 +28,26 @@
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
+        'instanciamos el servicio de cliente para poder hacer modificaciones en la bd'
         Dim clien As ClienteService = New ClienteService()
 
+        'seteamos los atributos de nuestro cliente, con los modificados (o no) de los txt fields'
         cli.nombre = txt_nombre.Text
         cli.apellido = txt_apellido.Text
         cli.direccion = txt_direccion.Text
         cli.zona = txt_barrio.Text
+        'si esta en modo añadir..'
         If bandera Then
 
             Try
+                'el telefono se setea dentro del try porque el parse puede dar error'
                 cli.telefono = Integer.Parse(txt_telefono.Text)
+                'agregamos un NUEVO cliente, por la bandera nos dimos cuenta que habia que agregarlo'
                 clien.agregarCliente(cli)
+                'refrescamos la grilla del listar clientes y la hacemos visible'
                 frm_listarClientes.cargarGrilla()
                 frm_listarClientes.Show()
+                'hacemos no visible a este formulario'
                 Me.Hide()
             Catch ex As Exception
                 MsgBox(msj_errorTipoDato, MsgBoxStyle.OkOnly, error_title)
@@ -44,10 +55,14 @@
         Else
             Try
                 cli.telefono = Integer.Parse(txt_telefono.Text)
+                'modificamos un cliente ya existente en la base de datos'
                 clien.updateCliente(cli)
+                'volvemos a setear la bandera a true, que seria el modo añadir'
                 bandera = True
+                'refrescamos la grilla del listar clientes y la hacemos visible'
                 frm_listarClientes.cargarGrilla()
                 frm_listarClientes.Show()
+                'hacemos no visible a este formulario'
                 Me.Hide()
             Catch ex As Exception
                 MsgBox(msj_errorTipoDato, MsgBoxStyle.OkOnly, error_title)
