@@ -32,4 +32,11 @@
         frm_addBarrio.Show()
     End Sub
 
+    Private Sub btn_exit_Click(sender As Object, e As EventArgs) Handles btn_exit.Click
+        Me.Close()
+    End Sub
+
+    Private Sub frm_listarBarrios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.cargarGrilla()
+    End Sub
 End Class

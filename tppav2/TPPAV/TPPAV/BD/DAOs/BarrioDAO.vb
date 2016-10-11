@@ -20,8 +20,8 @@ Public Class BarrioDAO
     End Function
 
     Public Function getIdNuevoBarrio() As Integer
-        Dim strSQL = "SELECT count (*) FROM Barrio"
-        Dim countTablaBarrios = BdHelper.getDBHelper().ConsultaSQL(strSQL).Rows.Count
+        Dim strSQL = "SELECT MAX (id_barrio) as id FROM Barrio"
+        Dim countTablaBarrios = BdHelper.getDBHelper().ConsultaSQL(strSQL).Rows.Item(0).Item("id").ToString
         Return countTablaBarrios + 1
 
     End Function

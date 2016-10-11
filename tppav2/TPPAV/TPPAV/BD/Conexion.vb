@@ -1,9 +1,11 @@
-﻿Public Class Conexion
-    Private conexion_string As String = "Provider=SQLOLEDB;Data Source=DESKTOP-HK05I7G\SQLEXPRESS;Initial Catalog=Tppav;Persist Security Info=True;User ID=sa;Password=thyssenkrupps"
+﻿Imports System.Data.SqlClient
 
-    Public Function getCommander() As OleDb.OleDbCommand
-        Dim conexion As New Data.OleDb.OleDbConnection
-        Dim cmd As New Data.OleDb.OleDbCommand
+Public Class Conexion
+    Private conexion_string As String = "Data Source=DESKTOP-QCJTRBS\MSQLSERVER;Initial Catalog=Tppav;Persist Security Info=True;User ID=sa;Password=dijstra"
+
+    Public Function getCommander() As SqlCommand
+        Dim conexion As New SqlConnection
+        Dim cmd As New SqlCommand
 
         Try
             conexion.ConnectionString = conexion_string

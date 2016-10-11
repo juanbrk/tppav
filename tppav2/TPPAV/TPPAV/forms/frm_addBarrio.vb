@@ -1,5 +1,4 @@
 ﻿Public Class frm_addBarrio
-    Dim msj_errorTipoDato As String = "Por favor, ingrese solo numeros en el campo telefono"
     Dim error_title As String = "Error"
     Property bandera As Boolean = True
     Dim cantBarrios As Integer = 0
@@ -38,7 +37,7 @@
                 frm_listarBarrios.Show()
                 Me.Hide()
             Catch ex As Exception
-                MsgBox(msj_errorTipoDato, MsgBoxStyle.OkOnly, error_title)
+                MsgBox("Error al agregar barrio, probablemente el nombre ya exista", MsgBoxStyle.OkOnly, error_title)
             End Try
         Else
             Try
@@ -49,7 +48,7 @@
                 frm_listarBarrios.Show()
                 Me.Hide()
             Catch ex As Exception
-                MsgBox(msj_errorTipoDato, MsgBoxStyle.OkOnly, error_title)
+                MsgBox("Error al modificar barrio, probablemente el nombre ya exista", MsgBoxStyle.OkOnly, error_title)
             End Try
         End If
     End Sub

@@ -1,4 +1,6 @@
-﻿Public Class BdHelper
+﻿Imports System.Data.SqlClient
+
+Public Class BdHelper
     Private Shared instance As BdHelper
     Private con As Conexion = New Conexion()
     Private Sub New()
@@ -17,8 +19,8 @@
             Dim comm = con.getCommander()
             comm.CommandText = strSql
             Return comm.ExecuteNonQuery()
-        Catch ex As OleDb.OleDbException
-            Throw Ex
+        Catch ex As SqlException
+            Throw ex
         End Try
     End Function
 
@@ -29,7 +31,7 @@
             comm.CommandText = strSql
             tabla.Load(comm.ExecuteReader)
             Return tabla
-        Catch ex As OleDb.OleDbException
+        Catch ex As SqlException
             Throw ex
         End Try
     End Function
