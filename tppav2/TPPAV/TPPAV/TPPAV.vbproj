@@ -72,8 +72,11 @@
   <ItemGroup>
     <Compile Include="BD\BdHelper.vb" />
     <Compile Include="BD\Conexion.vb" />
+    <Compile Include="BD\DAOs\ArticuloDAO.vb" />
     <Compile Include="BD\DAOs\BarrioDAO.vb" />
+    <Compile Include="BD\DAOs\CategoriaDAO.vb" />
     <Compile Include="BD\DAOs\ClienteDAO.vb" />
+    <Compile Include="BD\DAOs\PedidoDAO.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +96,12 @@
     <Compile Include="forms\frm_addClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\frm_addDetalle.Designer.vb">
+      <DependentUpon>frm_addDetalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_addDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\frm_addProovedor.Designer.vb">
       <DependentUpon>frm_addProovedor.vb</DependentUpon>
     </Compile>
@@ -109,6 +118,12 @@
       <DependentUpon>frm_categoriaArticulo.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_categoriaArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_crearPedido.Designer.vb">
+      <DependentUpon>frm_crearPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_crearPedido.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frm_listarClientes.Designer.vb">
@@ -163,8 +178,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Servicios\ArticuloService.vb" />
     <Compile Include="Servicios\BarrioService.vb" />
+    <Compile Include="Servicios\CategoriaService.vb" />
     <Compile Include="Servicios\ClienteService.vb" />
+    <Compile Include="Servicios\PedidoService.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="forms\frm_addBarrio.resx">
@@ -172,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_addClientes.resx">
       <DependentUpon>frm_addClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_addDetalle.resx">
+      <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_addProovedor.resx">
       <DependentUpon>frm_addProovedor.vb</DependentUpon>
@@ -181,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_categoriaArticulo.resx">
       <DependentUpon>frm_categoriaArticulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_crearPedido.resx">
+      <DependentUpon>frm_crearPedido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_listarClientes.resx">
       <DependentUpon>frm_listarClientes.vb</DependentUpon>

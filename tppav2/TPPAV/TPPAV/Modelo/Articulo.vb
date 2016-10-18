@@ -6,4 +6,8 @@
     Public Property precioCaja As Double
     Public Property categoria As CategoriaArt
     Public Property proveedor As Proveedor
+
+    Public Overrides Function toString() As String
+        Return nombre
+    End Function
 End Class

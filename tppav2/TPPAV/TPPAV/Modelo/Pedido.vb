@@ -5,4 +5,6 @@
     Public Property total As Double
     Public Property nro_factura As Integer
     Public Property cliente As Cliente
+
+    Public Property detalles As List(Of DetallePedido)
 End Class

@@ -37,90 +37,102 @@ Partial Class frm_addProovedor
         'lbl_rznSocial
         '
         Me.lbl_rznSocial.AutoSize = True
-        Me.lbl_rznSocial.Location = New System.Drawing.Point(12, 18)
+        Me.lbl_rznSocial.Location = New System.Drawing.Point(9, 15)
+        Me.lbl_rznSocial.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_rznSocial.Name = "lbl_rznSocial"
-        Me.lbl_rznSocial.Size = New System.Drawing.Size(89, 17)
+        Me.lbl_rznSocial.Size = New System.Drawing.Size(68, 13)
         Me.lbl_rznSocial.TabIndex = 0
         Me.lbl_rznSocial.Text = "Razon social"
         '
         'lbl_direccion
         '
         Me.lbl_direccion.AutoSize = True
-        Me.lbl_direccion.Location = New System.Drawing.Point(12, 61)
+        Me.lbl_direccion.Location = New System.Drawing.Point(9, 50)
+        Me.lbl_direccion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_direccion.Name = "lbl_direccion"
-        Me.lbl_direccion.Size = New System.Drawing.Size(67, 17)
+        Me.lbl_direccion.Size = New System.Drawing.Size(52, 13)
         Me.lbl_direccion.TabIndex = 1
         Me.lbl_direccion.Text = "Direccion"
         '
         'lbl_email
         '
         Me.lbl_email.AutoSize = True
-        Me.lbl_email.Location = New System.Drawing.Point(12, 104)
+        Me.lbl_email.Location = New System.Drawing.Point(9, 84)
+        Me.lbl_email.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_email.Name = "lbl_email"
-        Me.lbl_email.Size = New System.Drawing.Size(42, 17)
+        Me.lbl_email.Size = New System.Drawing.Size(32, 13)
         Me.lbl_email.TabIndex = 2
         Me.lbl_email.Text = "Email"
         '
         'lbl_telefono
         '
         Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(228, 104)
+        Me.lbl_telefono.Location = New System.Drawing.Point(171, 84)
+        Me.lbl_telefono.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(64, 17)
+        Me.lbl_telefono.Size = New System.Drawing.Size(49, 13)
         Me.lbl_telefono.TabIndex = 3
         Me.lbl_telefono.Text = "Telefono"
         '
         'txt_razonSocial
         '
-        Me.txt_razonSocial.Location = New System.Drawing.Point(13, 36)
+        Me.txt_razonSocial.Location = New System.Drawing.Point(10, 29)
+        Me.txt_razonSocial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_razonSocial.Name = "txt_razonSocial"
-        Me.txt_razonSocial.Size = New System.Drawing.Size(427, 22)
+        Me.txt_razonSocial.Size = New System.Drawing.Size(321, 20)
         Me.txt_razonSocial.TabIndex = 4
         '
         'txt_direccion
         '
-        Me.txt_direccion.Location = New System.Drawing.Point(13, 79)
+        Me.txt_direccion.Location = New System.Drawing.Point(10, 64)
+        Me.txt_direccion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(427, 22)
+        Me.txt_direccion.Size = New System.Drawing.Size(321, 20)
         Me.txt_direccion.TabIndex = 5
         '
         'txt_email
         '
-        Me.txt_email.Location = New System.Drawing.Point(13, 125)
+        Me.txt_email.Location = New System.Drawing.Point(10, 102)
+        Me.txt_email.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(178, 22)
+        Me.txt_email.Size = New System.Drawing.Size(134, 20)
         Me.txt_email.TabIndex = 6
         '
         'txt_telefono
         '
-        Me.txt_telefono.Location = New System.Drawing.Point(231, 124)
+        Me.txt_telefono.Location = New System.Drawing.Point(173, 101)
+        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(209, 22)
+        Me.txt_telefono.Size = New System.Drawing.Size(158, 20)
         Me.txt_telefono.TabIndex = 7
         '
         'btn_add
         '
-        Me.btn_add.Location = New System.Drawing.Point(364, 183)
+        Me.btn_add.DialogResult = System.Windows.Forms.DialogResult.OK
+        Me.btn_add.Location = New System.Drawing.Point(266, 149)
+        Me.btn_add.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(75, 31)
+        Me.btn_add.Size = New System.Drawing.Size(63, 25)
         Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Agregar"
         Me.btn_add.UseVisualStyleBackColor = True
         '
         'btn_clear
         '
-        Me.btn_clear.Location = New System.Drawing.Point(231, 183)
+        Me.btn_clear.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btn_clear.Location = New System.Drawing.Point(173, 149)
+        Me.btn_clear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(115, 31)
+        Me.btn_clear.Size = New System.Drawing.Size(77, 25)
         Me.btn_clear.TabIndex = 9
-        Me.btn_clear.Text = "Limpiar campos"
+        Me.btn_clear.Text = "Cancelar"
         Me.btn_clear.UseVisualStyleBackColor = True
         '
         'frm_addProovedor
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(452, 222)
+        Me.ClientSize = New System.Drawing.Size(339, 180)
         Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_telefono)
@@ -131,6 +143,7 @@ Partial Class frm_addProovedor
         Me.Controls.Add(Me.lbl_email)
         Me.Controls.Add(Me.lbl_direccion)
         Me.Controls.Add(Me.lbl_rznSocial)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frm_addProovedor"
         Me.Text = "Agregar nuevo proveedor"
         Me.ResumeLayout(False)

@@ -1,7 +1,7 @@
 ﻿Public Class BarrioService
-    Private barrdao As BarrioDAO
+    Private barrdao As BarrioDao
     Public Sub New()
-        barrdao = New BarrioDAO()
+        barrdao = New BarrioDao()
     End Sub
 
     Public Function listarBarrios() As List(Of Barrio)

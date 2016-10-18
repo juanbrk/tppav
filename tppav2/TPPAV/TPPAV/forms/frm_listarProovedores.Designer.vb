@@ -36,18 +36,20 @@ Partial Class frm_listarProovedores
         '
         'btn_ext
         '
-        Me.btn_ext.Location = New System.Drawing.Point(470, 218)
+        Me.btn_ext.Location = New System.Drawing.Point(352, 177)
+        Me.btn_ext.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_ext.Name = "btn_ext"
-        Me.btn_ext.Size = New System.Drawing.Size(75, 36)
+        Me.btn_ext.Size = New System.Drawing.Size(56, 29)
         Me.btn_ext.TabIndex = 0
         Me.btn_ext.Text = "Salir"
         Me.btn_ext.UseVisualStyleBackColor = True
         '
         'btn_delete
         '
-        Me.btn_delete.Location = New System.Drawing.Point(314, 218)
+        Me.btn_delete.Location = New System.Drawing.Point(236, 177)
+        Me.btn_delete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Size = New System.Drawing.Size(150, 35)
+        Me.btn_delete.Size = New System.Drawing.Size(112, 28)
         Me.btn_delete.TabIndex = 1
         Me.btn_delete.Text = "Eliminar"
         Me.btn_delete.UseVisualStyleBackColor = True
@@ -55,9 +57,10 @@ Partial Class frm_listarProovedores
         'lbl_proveedores
         '
         Me.lbl_proveedores.AutoSize = True
-        Me.lbl_proveedores.Location = New System.Drawing.Point(13, 13)
+        Me.lbl_proveedores.Location = New System.Drawing.Point(10, 11)
+        Me.lbl_proveedores.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_proveedores.Name = "lbl_proveedores"
-        Me.lbl_proveedores.Size = New System.Drawing.Size(89, 17)
+        Me.lbl_proveedores.Size = New System.Drawing.Size(67, 13)
         Me.lbl_proveedores.TabIndex = 2
         Me.lbl_proveedores.Text = "Proveedores"
         '
@@ -65,10 +68,11 @@ Partial Class frm_listarProovedores
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idProv, Me.col_razonSoc, Me.col_direccion, Me.col_email, Me.col_telefono})
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 34)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 28)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(533, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(541, 124)
         Me.DataGridView1.TabIndex = 3
         '
         'col_idProv
@@ -98,13 +102,14 @@ Partial Class frm_listarProovedores
         '
         'frm_listarProovedores
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(551, 265)
+        Me.ClientSize = New System.Drawing.Size(564, 223)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lbl_proveedores)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_ext)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frm_listarProovedores"
         Me.Text = "frm_listarProovedores"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

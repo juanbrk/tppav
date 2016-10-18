@@ -7,7 +7,7 @@
 
     Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
         txt_apellido.Text = String.Empty
-        txt_barrio.Text = String.Empty
+        'txt_barrio.Text = String.Empty
         txt_direccion.Text = String.Empty
         txt_nombre.Text = String.Empty
         txt_telefono.Text = String.Empty
@@ -23,7 +23,7 @@
         txt_nombre.Text = cli.nombre
         txt_apellido.Text = cli.apellido
         txt_direccion.Text = cli.direccion
-        txt_barrio.Text = cli.zona
+        'txt_barrio.Text = cli.zona
         txt_telefono.Text = cli.telefono.ToString
     End Sub
 
@@ -35,7 +35,9 @@
         cli.nombre = txt_nombre.Text
         cli.apellido = txt_apellido.Text
         cli.direccion = txt_direccion.Text
-        cli.zona = txt_barrio.Text
+        cli.barrio = New Barrio
+        cli.barrio.ID_BARRIO = Convert.ToInt32(cbo_barrios.SelectedValue.ToString)
+        'cli.zona = txt_barrio.Text
         'si esta en modo añadir..'
         If bandera Then
 
@@ -97,5 +99,12 @@
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Me.Close()
 
+    End Sub
+
+    Private Sub frm_addClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim barriosService As BarrioService = New BarrioService
+        cbo_barrios.DataSource = barriosService.listarBarrios
+        cbo_barrios.DisplayMember = "nombre"
+        cbo_barrios.ValueMember = "ID_BARRIO"
     End Sub
 End Class

@@ -21,7 +21,7 @@
         For Each cli In clienteService.listarClientes()
             With cli
                 'añado una fila por cada cliente, con su id nombre apellido direccion y zona'
-                dgv_listaClientes.Rows.Add(New String() { .idCliente.ToString, .nombre, .apellido, .direccion, .zona, .telefono})
+                dgv_listaClientes.Rows.Add(New String() { .idCliente.ToString, .nombre, .apellido, .direccion, .barrio.nombre, .telefono})
             End With
         Next
     End Sub
@@ -34,6 +34,9 @@
         Dim dialog As frm_addClientes
         dialog = New frm_addClientes()
         Dim result As DialogResult = dialog.ShowDialog(Me)
+        If result = DialogResult.OK Then
+            Me.cargarGrilla()
+        End If
     End Sub
 
     Private Sub btn_exit_Click(sender As Object, e As EventArgs) Handles btn_exit.Click
@@ -47,14 +50,18 @@
         cl.nombre = dgv_listaClientes.CurrentRow.Cells.Item("col_nomCliente").Value
         cl.apellido = dgv_listaClientes.CurrentRow.Cells.Item("col_apellido").Value
         cl.direccion = dgv_listaClientes.CurrentRow.Cells.Item("col_direccion").Value
-        cl.zona = dgv_listaClientes.CurrentRow.Cells.Item("col_barrio").Value
+        cl.barrio = New Barrio
+        cl.barrio.ID_BARRIO = dgv_listaClientes.CurrentRow.Cells.Item("col_barrio").Value
         cl.telefono = Integer.Parse(dgv_listaClientes.CurrentRow.Cells.Item("col_telefono").Value)
-        'hago no visible a este formulario'
-        Me.Hide()
+        Dim addcli As frm_addClientes = New frm_addClientes
+
         'seteo el modoeditar de frmaddclientes'
-        frm_addClientes.modoEditar(cl)
+        addcli.modoEditar(cl)
         'hago visible al formulario frmaddclientes'
-        frm_addClientes.Show()
+        Dim res As DialogResult = addcli.ShowDialog
+        If res = DialogResult.OK Then
+            Me.cargarGrilla()
+        End If
     End Sub
 
     Private Sub dgv_listaClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listaClientes.CellContentClick

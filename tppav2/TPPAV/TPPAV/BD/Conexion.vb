@@ -21,4 +21,19 @@ Public Class Conexion
         End Try
     End Function
 
+    Public Function getConnection() As SqlConnection
+        Dim conexion As New SqlConnection
+
+        Try
+            conexion.ConnectionString = conexion_string
+            conexion.Open()
+
+            Return conexion
+        Catch ex As Exception
+            Throw ex
+            conexion.Close()
+            conexion.Dispose()
+        End Try
+    End Function
+
 End Class

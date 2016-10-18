@@ -1,5 +1,5 @@
 ﻿Imports TPPAV
-Public Class BarrioDAO
+Public Class BarrioDao
     Friend Function getAll() As List(Of Barrio)
         Dim nuevoBarrio As Barrio
         Dim listaBarrios As New List(Of Barrio)
