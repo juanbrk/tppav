@@ -87,7 +87,9 @@
         Dim dialog As frm_addBarrio
         dialog = New frm_addBarrio() 
         Dim result As DialogResult = dialog.ShowDialog(Me)
-
+        If result = DialogResult.OK Then
+            cargarBarrios()
+        End If
         'Esto va si traemos un resultado desde otra form.
         'If result = Windows.Forms.DialogResult.Yes Then
         '    txt_barrio.Text = dialog.Note
@@ -101,10 +103,14 @@
 
     End Sub
 
-    Private Sub frm_addClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub cargarBarrios()
         Dim barriosService As BarrioService = New BarrioService
+        cbo_barrios.DataSource = New List(Of Object) 'sirve de clear'
         cbo_barrios.DataSource = barriosService.listarBarrios
         cbo_barrios.DisplayMember = "nombre"
         cbo_barrios.ValueMember = "ID_BARRIO"
+    End Sub
+    Private Sub frm_addClientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarBarrios()
     End Sub
 End Class

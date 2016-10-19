@@ -41,7 +41,7 @@ Partial Class frm_addBarrio
         'txt_nomBarrio
         '
         Me.txt_nomBarrio.Location = New System.Drawing.Point(106, 11)
-        Me.txt_nomBarrio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_nomBarrio.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_nomBarrio.Name = "txt_nomBarrio"
         Me.txt_nomBarrio.Size = New System.Drawing.Size(180, 20)
         Me.txt_nomBarrio.TabIndex = 1
@@ -50,7 +50,7 @@ Partial Class frm_addBarrio
         '
         Me.btn_add.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btn_add.Location = New System.Drawing.Point(230, 43)
-        Me.btn_add.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_add.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(56, 25)
         Me.btn_add.TabIndex = 2
@@ -61,7 +61,7 @@ Partial Class frm_addBarrio
         '
         Me.btn_salir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btn_salir.Location = New System.Drawing.Point(164, 43)
-        Me.btn_salir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_salir.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(59, 25)
         Me.btn_salir.TabIndex = 3
@@ -77,7 +77,7 @@ Partial Class frm_addBarrio
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_nomBarrio)
         Me.Controls.Add(Me.lbl_nomBarrio)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frm_addBarrio"
         Me.Text = "Agregar nuevo barrio"
         Me.ResumeLayout(False)

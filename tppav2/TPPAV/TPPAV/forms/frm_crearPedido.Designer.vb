@@ -47,7 +47,7 @@ Partial Class frm_crearPedido
         'Label4
         '
         Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(56, 259)
+        Label4.Location = New System.Drawing.Point(47, 259)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(48, 13)
         Label4.TabIndex = 10
@@ -57,7 +57,7 @@ Partial Class frm_crearPedido
         '
         Me.dtp_entrega.CustomFormat = "dd/MM/yyyy hh:mm"
         Me.dtp_entrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtp_entrega.Location = New System.Drawing.Point(254, 44)
+        Me.dtp_entrega.Location = New System.Drawing.Point(245, 44)
         Me.dtp_entrega.Name = "dtp_entrega"
         Me.dtp_entrega.Size = New System.Drawing.Size(138, 20)
         Me.dtp_entrega.TabIndex = 0
@@ -65,7 +65,7 @@ Partial Class frm_crearPedido
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 50)
+        Me.Label1.Location = New System.Drawing.Point(44, 50)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(94, 13)
         Me.Label1.TabIndex = 1
@@ -74,7 +74,7 @@ Partial Class frm_crearPedido
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(53, 103)
+        Me.Label2.Location = New System.Drawing.Point(44, 103)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(42, 13)
         Me.Label2.TabIndex = 2
@@ -83,7 +83,7 @@ Partial Class frm_crearPedido
         'cbo_cliente
         '
         Me.cbo_cliente.FormattingEnabled = True
-        Me.cbo_cliente.Location = New System.Drawing.Point(254, 103)
+        Me.cbo_cliente.Location = New System.Drawing.Point(245, 103)
         Me.cbo_cliente.Name = "cbo_cliente"
         Me.cbo_cliente.Size = New System.Drawing.Size(121, 21)
         Me.cbo_cliente.TabIndex = 3
@@ -91,7 +91,7 @@ Partial Class frm_crearPedido
         'lbl_total
         '
         Me.lbl_total.AutoSize = True
-        Me.lbl_total.Location = New System.Drawing.Point(53, 152)
+        Me.lbl_total.Location = New System.Drawing.Point(44, 152)
         Me.lbl_total.Name = "lbl_total"
         Me.lbl_total.Size = New System.Drawing.Size(34, 13)
         Me.lbl_total.TabIndex = 4
@@ -100,7 +100,7 @@ Partial Class frm_crearPedido
         'txt_total
         '
         Me.txt_total.AutoSize = True
-        Me.txt_total.Location = New System.Drawing.Point(251, 152)
+        Me.txt_total.Location = New System.Drawing.Point(242, 152)
         Me.txt_total.Name = "txt_total"
         Me.txt_total.Size = New System.Drawing.Size(27, 13)
         Me.txt_total.TabIndex = 5
@@ -109,7 +109,7 @@ Partial Class frm_crearPedido
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 204)
+        Me.Label3.Location = New System.Drawing.Point(44, 204)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(101, 13)
         Me.Label3.TabIndex = 6
@@ -117,14 +117,14 @@ Partial Class frm_crearPedido
         '
         'txt_nro_factura
         '
-        Me.txt_nro_factura.Location = New System.Drawing.Point(254, 201)
+        Me.txt_nro_factura.Location = New System.Drawing.Point(245, 201)
         Me.txt_nro_factura.Name = "txt_nro_factura"
         Me.txt_nro_factura.Size = New System.Drawing.Size(100, 20)
         Me.txt_nro_factura.TabIndex = 7
         '
         'btn_cliente
         '
-        Me.btn_cliente.Location = New System.Drawing.Point(409, 103)
+        Me.btn_cliente.Location = New System.Drawing.Point(400, 103)
         Me.btn_cliente.Name = "btn_cliente"
         Me.btn_cliente.Size = New System.Drawing.Size(75, 23)
         Me.btn_cliente.TabIndex = 8
@@ -136,9 +136,9 @@ Partial Class frm_crearPedido
         Me.dgv_detalles.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgv_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_detalles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_art_nom, Me.col_cantidad, Me.col_precio, Me.col_descuento})
-        Me.dgv_detalles.Location = New System.Drawing.Point(46, 315)
+        Me.dgv_detalles.Location = New System.Drawing.Point(37, 315)
         Me.dgv_detalles.Name = "dgv_detalles"
-        Me.dgv_detalles.Size = New System.Drawing.Size(443, 156)
+        Me.dgv_detalles.Size = New System.Drawing.Size(438, 156)
         Me.dgv_detalles.TabIndex = 9
         '
         'col_art_nom
@@ -163,7 +163,7 @@ Partial Class frm_crearPedido
         '
         'btn_detalle
         '
-        Me.btn_detalle.Location = New System.Drawing.Point(254, 259)
+        Me.btn_detalle.Location = New System.Drawing.Point(245, 259)
         Me.btn_detalle.Name = "btn_detalle"
         Me.btn_detalle.Size = New System.Drawing.Size(100, 23)
         Me.btn_detalle.TabIndex = 11
@@ -173,7 +173,7 @@ Partial Class frm_crearPedido
         'btn_reg_pedido
         '
         Me.btn_reg_pedido.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.btn_reg_pedido.Location = New System.Drawing.Point(390, 507)
+        Me.btn_reg_pedido.Location = New System.Drawing.Point(381, 507)
         Me.btn_reg_pedido.Name = "btn_reg_pedido"
         Me.btn_reg_pedido.Size = New System.Drawing.Size(94, 23)
         Me.btn_reg_pedido.TabIndex = 12
@@ -183,7 +183,7 @@ Partial Class frm_crearPedido
         'btn_cancelar
         '
         Me.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_cancelar.Location = New System.Drawing.Point(275, 507)
+        Me.btn_cancelar.Location = New System.Drawing.Point(266, 507)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 13
@@ -194,7 +194,7 @@ Partial Class frm_crearPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(546, 570)
+        Me.ClientSize = New System.Drawing.Size(512, 567)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_reg_pedido)
         Me.Controls.Add(Me.btn_detalle)

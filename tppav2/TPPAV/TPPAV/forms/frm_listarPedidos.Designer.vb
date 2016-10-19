@@ -39,17 +39,19 @@ Partial Class frm_listarPedidos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbl_id = New System.Windows.Forms.Label()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
         CType(Me.dgv_detalles, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv_detalles
         '
+        Me.dgv_detalles.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgv_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_detalles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id_det, Me.col_precio, Me.col_cant, Me.col_desc, Me.col_art})
         Me.dgv_detalles.Location = New System.Drawing.Point(115, 320)
         Me.dgv_detalles.Name = "dgv_detalles"
-        Me.dgv_detalles.Size = New System.Drawing.Size(539, 118)
+        Me.dgv_detalles.Size = New System.Drawing.Size(539, 164)
         Me.dgv_detalles.TabIndex = 0
         '
         'col_id_det
@@ -88,11 +90,12 @@ Partial Class frm_listarPedidos
         '
         'dgv_pedidos
         '
+        Me.dgv_pedidos.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_nom_cli, Me.col_fecha_ped, Me.col_fecha_ent, Me.col_total, Me.col_nro})
         Me.dgv_pedidos.Location = New System.Drawing.Point(60, 72)
         Me.dgv_pedidos.Name = "dgv_pedidos"
-        Me.dgv_pedidos.Size = New System.Drawing.Size(645, 150)
+        Me.dgv_pedidos.Size = New System.Drawing.Size(642, 150)
         Me.dgv_pedidos.TabIndex = 2
         '
         'col_id
@@ -152,11 +155,21 @@ Partial Class frm_listarPedidos
         Me.lbl_id.TabIndex = 5
         Me.lbl_id.Text = "id"
         '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Location = New System.Drawing.Point(557, 518)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_cerrar.TabIndex = 6
+        Me.btn_cerrar.Text = "Cerrar"
+        Me.btn_cerrar.UseVisualStyleBackColor = True
+        '
         'frm_listarPedidos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(763, 518)
+        Me.ClientSize = New System.Drawing.Size(745, 561)
+        Me.Controls.Add(Me.btn_cerrar)
         Me.Controls.Add(Me.lbl_id)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -190,4 +203,5 @@ Partial Class frm_listarPedidos
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lbl_id As Label
+    Friend WithEvents btn_cerrar As Button
 End Class

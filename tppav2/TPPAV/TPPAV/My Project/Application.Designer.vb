@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.TPPAV.frm_crearPedido
+            Me.MainForm = Global.TPPAV.frm_principal
         End Sub
     End Class
 End Namespace

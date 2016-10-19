@@ -108,16 +108,16 @@
     <Compile Include="forms\frm_addProovedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_articulo.Designer.vb">
-      <DependentUpon>frm_articulo.vb</DependentUpon>
+    <Compile Include="forms\frm_addArticulo.Designer.vb">
+      <DependentUpon>frm_addArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_articulo.vb">
+    <Compile Include="forms\frm_addArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_categoriaArticulo.Designer.vb">
-      <DependentUpon>frm_categoriaArticulo.vb</DependentUpon>
+    <Compile Include="forms\frm_addCategoriaArticulo.Designer.vb">
+      <DependentUpon>frm_addCategoriaArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_categoriaArticulo.vb">
+    <Compile Include="forms\frm_addCategoriaArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frm_crearPedido.Designer.vb">
@@ -142,6 +142,12 @@
       <DependentUpon>frm_listarProovedores.vb</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_listarProovedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_principal.Designer.vb">
+      <DependentUpon>frm_principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frm_usrLogin.designer.vb">
@@ -197,11 +203,11 @@
     <EmbeddedResource Include="forms\frm_addProovedor.resx">
       <DependentUpon>frm_addProovedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_articulo.resx">
-      <DependentUpon>frm_articulo.vb</DependentUpon>
+    <EmbeddedResource Include="forms\frm_addArticulo.resx">
+      <DependentUpon>frm_addArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_categoriaArticulo.resx">
-      <DependentUpon>frm_categoriaArticulo.vb</DependentUpon>
+    <EmbeddedResource Include="forms\frm_addCategoriaArticulo.resx">
+      <DependentUpon>frm_addCategoriaArticulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_crearPedido.resx">
       <DependentUpon>frm_crearPedido.vb</DependentUpon>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_listarProovedores.resx">
       <DependentUpon>frm_listarProovedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_principal.resx">
+      <DependentUpon>frm_principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_usrLogin.resx">
       <DependentUpon>frm_usrLogin.vb</DependentUpon>

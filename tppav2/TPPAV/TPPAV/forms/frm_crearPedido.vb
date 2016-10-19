@@ -66,7 +66,7 @@
             Return
         End If
         Dim pedido As Pedido = New Pedido
-
+        pedido.cliente = cbo_cliente.SelectedItem
         pedido.fecha_entrega = dtp_entrega.Value
 
         If txt_nro_factura.Text = String.Empty Then
@@ -84,6 +84,15 @@
         pedido.detalles = detalles
         pedido.total = calcularTotal()
 
+        Dim pedidoservice As PedidoService = New PedidoService
+        If pedidoservice.agregarPedido(pedido) = 1 Then
+            MsgBox("Se ha registrado el pedido!")
+        Else
+            MsgBox("Hubo un error al registrar el pedido")
+        End If
+    End Sub
 
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        Me.Close()
     End Sub
 End Class

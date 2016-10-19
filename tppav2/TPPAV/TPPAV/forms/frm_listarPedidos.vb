@@ -21,6 +21,7 @@
         Dim detalles As List(Of DetallePedido) = service.verDetalle(ped.id_pedido)
 
         dgv_detalles.AutoGenerateColumns = False
+        dgv_detalles.DataSource = "" 'sirve para "resetear" el datasource
         dgv_detalles.DataSource = detalles
         dgv_detalles.Columns.Item(0).DataPropertyName = "id_detalle"
         dgv_detalles.Columns.Item(1).DataPropertyName = "precioU"
@@ -32,5 +33,9 @@
     Private Sub dgv_pedidos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_pedidos.CellContentClick
         btn_buscar.Enabled = True
         lbl_id.Text = dgv_pedidos.CurrentRow.Cells(0).Value.ToString
+    End Sub
+
+    Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click
+        Me.Close()
     End Sub
 End Class

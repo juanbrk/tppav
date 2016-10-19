@@ -34,18 +34,18 @@ Public Class PedidoDAO
     Friend Function addPedido(ped As Pedido) As Integer
         Dim str As List(Of String) = New List(Of String)
         'primero armamos el sql para registrar el pedido y lo agregamos a la lista
-        str.Add("INSERT INTO Pedido (Cliente_id, Fecha_pedido, Total, Nro_factura) VALUES (" + ped.cliente.idCliente.ToString + ", GETDATE(), " + ped.total.ToString + ", " + ped.nro_factura.ToString + ")")
+        str.Add("INSERT INTO Pedido (Cliente_id, Fecha_pedido, Fecha_entrega, Total, Nro_factura) VALUES (" + ped.cliente.idCliente.ToString + ", GETDATE(), @FechaEntrega," + ped.total.ToString + ", " + ped.nro_factura.ToString + ")")
         'ahora añadimos cada uno de los detalles
         For i = 0 To ped.detalles.Count - 1
             Dim det As DetallePedido = ped.detalles.ElementAt(i)
-            str.Add("INSERT INTO Detalle_pedido (Pedido_id, Precio_unidad, Cantidad, Descuento, Articulo_id) VALUES (@id, " + det.precioU.ToString + ", " + det.cantidad.ToString + ", " + det.descuento.ToString + ", " + det.articulo.idArticulo.ToString + ")")
+            str.Add("INSERT INTO Detalle_pedido (Detalle_id, Pedido_id, Precio_unidad, Cantidad, Descuento, Articulo_id) VALUES (" + (i + 1).ToString + ", @id, " + det.precioU.ToString + ", " + det.cantidad.ToString + ", " + det.descuento.ToString + ", " + det.articulo.idArticulo.ToString + ")")
         Next
-        Return BdHelper.getDBHelper.ejecutarSQLTransaction(str)
+        Return BdHelper.getDBHelper.ejecutarSQLTransaction(str, ped.fecha_entrega)
     End Function
 
     Friend Function verDetalles(id As Integer) As List(Of DetallePedido)
         Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT d.Detalle_id as id, d.Precio_unidad as precioU , d.Cantidad as cant , d.Descuento as dec , a.Nombre as nomArt FROM Pedido p JOIN Detalle_pedido d ON
-                                   p.Pedido_id=d.Pedido_id JOIN Articulo a ON a.Id_articulo=d.Articulo_id")
+                                   p.Pedido_id=d.Pedido_id JOIN Articulo a ON a.Id_articulo=d.Articulo_id WHERE p.Pedido_id=" & id.ToString)
         Dim det As DetallePedido
         Dim listaDetalles As New List(Of DetallePedido)
         For Each row As DataRow In data.Rows

@@ -4,6 +4,9 @@
         Dim dialog As frm_addBarrio
         dialog = New frm_addBarrio()
         Dim result As DialogResult = dialog.ShowDialog(Me)
+        If result = DialogResult.OK Then
+            Me.cargarGrilla()
+        End If
     End Sub
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
@@ -27,9 +30,13 @@
         Dim barr As Barrio = New Barrio
         barr.ID_BARRIO = Integer.Parse(dgv_listadoBarrios.CurrentRow.Cells.Item("col_id").Value)
         barr.nombre = dgv_listadoBarrios.CurrentRow.Cells.Item("col_nom").Value
-        Me.Hide()
-        frm_addBarrio.modoEditar(barr)
-        frm_addBarrio.Show()
+        Dim add As frm_addBarrio = New frm_addBarrio
+
+        add.modoEditar(barr)
+        Dim result As DialogResult = add.ShowDialog
+        If result = DialogResult.OK Then
+            Me.cargarGrilla()
+        End If
     End Sub
 
     Private Sub btn_exit_Click(sender As Object, e As EventArgs) Handles btn_exit.Click

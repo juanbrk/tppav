@@ -33,9 +33,8 @@
             Try
 
                 barService.agregarBarrio(barrio)
-                frm_listarBarrios.cargarGrilla()
-                frm_listarBarrios.Show()
-                Me.Hide()
+
+                Me.Close()
             Catch ex As Exception
                 MsgBox("Error al agregar barrio, probablemente el nombre ya exista", MsgBoxStyle.OkOnly, error_title)
             End Try
@@ -44,12 +43,15 @@
 
                 barService.updateBarrio(barrio)
                 bandera = True
-                frm_listarBarrios.cargarGrilla()
-                frm_listarBarrios.Show()
-                Me.Hide()
+
+                Me.Close()
             Catch ex As Exception
-                MsgBox("Error al modificar barrio, probablemente el nombre ya exista", MsgBoxStyle.OkOnly, error_title)
+                MsgBox("Error al modificar barrio", MsgBoxStyle.OkOnly, error_title)
             End Try
         End If
+    End Sub
+
+    Private Sub frm_addBarrio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

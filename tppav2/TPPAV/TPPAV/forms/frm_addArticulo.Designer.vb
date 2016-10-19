@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_articulo
+Partial Class frm_addArticulo
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -37,91 +37,101 @@ Partial Class frm_articulo
         'lbl_nombre
         '
         Me.lbl_nombre.AutoSize = True
-        Me.lbl_nombre.Location = New System.Drawing.Point(12, 9)
+        Me.lbl_nombre.Location = New System.Drawing.Point(9, 7)
+        Me.lbl_nombre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_nombre.Name = "lbl_nombre"
-        Me.lbl_nombre.Size = New System.Drawing.Size(108, 17)
+        Me.lbl_nombre.Size = New System.Drawing.Size(81, 13)
         Me.lbl_nombre.TabIndex = 0
         Me.lbl_nombre.Text = "Nombre articulo"
         '
         'lbl_precXUni
         '
         Me.lbl_precXUni.AutoSize = True
-        Me.lbl_precXUni.Location = New System.Drawing.Point(12, 142)
+        Me.lbl_precXUni.Location = New System.Drawing.Point(9, 115)
+        Me.lbl_precXUni.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_precXUni.Name = "lbl_precXUni"
-        Me.lbl_precXUni.Size = New System.Drawing.Size(132, 34)
+        Me.lbl_precXUni.Size = New System.Drawing.Size(99, 26)
         Me.lbl_precXUni.TabIndex = 1
         Me.lbl_precXUni.Text = "Precio por unidad $" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbl_precXCaja
         '
         Me.lbl_precXCaja.AutoSize = True
-        Me.lbl_precXCaja.Location = New System.Drawing.Point(273, 142)
+        Me.lbl_precXCaja.Location = New System.Drawing.Point(205, 115)
+        Me.lbl_precXCaja.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_precXCaja.Name = "lbl_precXCaja"
-        Me.lbl_precXCaja.Size = New System.Drawing.Size(115, 17)
+        Me.lbl_precXCaja.Size = New System.Drawing.Size(87, 13)
         Me.lbl_precXCaja.TabIndex = 2
         Me.lbl_precXCaja.Text = "Precio por caja $"
         '
         'lbl_descripcion
         '
         Me.lbl_descripcion.AutoSize = True
-        Me.lbl_descripcion.Location = New System.Drawing.Point(12, 54)
+        Me.lbl_descripcion.Location = New System.Drawing.Point(9, 44)
+        Me.lbl_descripcion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_descripcion.Name = "lbl_descripcion"
-        Me.lbl_descripcion.Size = New System.Drawing.Size(82, 17)
+        Me.lbl_descripcion.Size = New System.Drawing.Size(63, 13)
         Me.lbl_descripcion.TabIndex = 3
         Me.lbl_descripcion.Text = "Descripcion"
         '
         'txt_nomArticulo
         '
-        Me.txt_nomArticulo.Location = New System.Drawing.Point(15, 30)
+        Me.txt_nomArticulo.Location = New System.Drawing.Point(11, 24)
+        Me.txt_nomArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_nomArticulo.Name = "txt_nomArticulo"
-        Me.txt_nomArticulo.Size = New System.Drawing.Size(359, 22)
+        Me.txt_nomArticulo.Size = New System.Drawing.Size(270, 20)
         Me.txt_nomArticulo.TabIndex = 4
         '
         'rtxt_descripcion
         '
-        Me.rtxt_descripcion.Location = New System.Drawing.Point(15, 75)
+        Me.rtxt_descripcion.Location = New System.Drawing.Point(11, 61)
+        Me.rtxt_descripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rtxt_descripcion.Name = "rtxt_descripcion"
-        Me.rtxt_descripcion.Size = New System.Drawing.Size(359, 46)
+        Me.rtxt_descripcion.Size = New System.Drawing.Size(270, 38)
         Me.rtxt_descripcion.TabIndex = 5
         Me.rtxt_descripcion.Text = ""
         '
         'txt_precXUnidad
         '
-        Me.txt_precXUnidad.Location = New System.Drawing.Point(141, 139)
+        Me.txt_precXUnidad.Location = New System.Drawing.Point(106, 113)
+        Me.txt_precXUnidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_precXUnidad.Name = "txt_precXUnidad"
-        Me.txt_precXUnidad.Size = New System.Drawing.Size(126, 22)
+        Me.txt_precXUnidad.Size = New System.Drawing.Size(96, 20)
         Me.txt_precXUnidad.TabIndex = 6
         '
         'txt_precXCaja
         '
-        Me.txt_precXCaja.Location = New System.Drawing.Point(395, 142)
+        Me.txt_precXCaja.Location = New System.Drawing.Point(296, 115)
+        Me.txt_precXCaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_precXCaja.Name = "txt_precXCaja"
-        Me.txt_precXCaja.Size = New System.Drawing.Size(136, 22)
+        Me.txt_precXCaja.Size = New System.Drawing.Size(103, 20)
         Me.txt_precXCaja.TabIndex = 7
         '
         'btn_add
         '
-        Me.btn_add.Location = New System.Drawing.Point(396, 201)
+        Me.btn_add.Location = New System.Drawing.Point(297, 163)
+        Me.btn_add.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(135, 33)
+        Me.btn_add.Size = New System.Drawing.Size(101, 27)
         Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Agregar articulo"
         Me.btn_add.UseVisualStyleBackColor = True
         '
         'btn_clear
         '
-        Me.btn_clear.Location = New System.Drawing.Point(247, 201)
+        Me.btn_clear.Location = New System.Drawing.Point(185, 163)
+        Me.btn_clear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(126, 33)
+        Me.btn_clear.Size = New System.Drawing.Size(94, 27)
         Me.btn_clear.TabIndex = 9
         Me.btn_clear.Text = "Limpiar campos"
         Me.btn_clear.UseVisualStyleBackColor = True
         '
-        'frm_articulo
+        'frm_addArticulo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(543, 246)
+        Me.ClientSize = New System.Drawing.Size(407, 200)
         Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_precXCaja)
@@ -132,7 +142,8 @@ Partial Class frm_articulo
         Me.Controls.Add(Me.lbl_precXCaja)
         Me.Controls.Add(Me.lbl_precXUni)
         Me.Controls.Add(Me.lbl_nombre)
-        Me.Name = "frm_articulo"
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Name = "frm_addArticulo"
         Me.Text = "Agregar nuevo articulo"
         Me.ResumeLayout(False)
         Me.PerformLayout()
