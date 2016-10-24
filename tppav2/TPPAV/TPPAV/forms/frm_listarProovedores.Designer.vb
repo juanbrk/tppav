@@ -25,31 +25,32 @@ Partial Class frm_listarProovedores
         Me.btn_ext = New System.Windows.Forms.Button()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.lbl_proveedores = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_proveedores = New System.Windows.Forms.DataGridView()
         Me.col_idProv = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_razonSoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_email = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_agregar = New System.Windows.Forms.Button()
+        CType(Me.dgv_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_ext
         '
-        Me.btn_ext.Location = New System.Drawing.Point(352, 177)
-        Me.btn_ext.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_ext.Location = New System.Drawing.Point(420, 179)
+        Me.btn_ext.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_ext.Name = "btn_ext"
-        Me.btn_ext.Size = New System.Drawing.Size(56, 29)
+        Me.btn_ext.Size = New System.Drawing.Size(70, 23)
         Me.btn_ext.TabIndex = 0
         Me.btn_ext.Text = "Salir"
         Me.btn_ext.UseVisualStyleBackColor = True
         '
         'btn_delete
         '
-        Me.btn_delete.Location = New System.Drawing.Point(236, 177)
-        Me.btn_delete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_delete.Location = New System.Drawing.Point(224, 179)
+        Me.btn_delete.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_delete.Name = "btn_delete"
-        Me.btn_delete.Size = New System.Drawing.Size(112, 28)
+        Me.btn_delete.Size = New System.Drawing.Size(80, 23)
         Me.btn_delete.TabIndex = 1
         Me.btn_delete.Text = "Eliminar"
         Me.btn_delete.UseVisualStyleBackColor = True
@@ -64,16 +65,17 @@ Partial Class frm_listarProovedores
         Me.lbl_proveedores.TabIndex = 2
         Me.lbl_proveedores.Text = "Proveedores"
         '
-        'DataGridView1
+        'dgv_proveedores
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idProv, Me.col_razonSoc, Me.col_direccion, Me.col_email, Me.col_telefono})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 28)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(541, 124)
-        Me.DataGridView1.TabIndex = 3
+        Me.dgv_proveedores.BackgroundColor = System.Drawing.SystemColors.Window
+        Me.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_proveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_idProv, Me.col_razonSoc, Me.col_direccion, Me.col_email, Me.col_telefono})
+        Me.dgv_proveedores.Location = New System.Drawing.Point(12, 28)
+        Me.dgv_proveedores.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_proveedores.Name = "dgv_proveedores"
+        Me.dgv_proveedores.RowTemplate.Height = 24
+        Me.dgv_proveedores.Size = New System.Drawing.Size(541, 124)
+        Me.dgv_proveedores.TabIndex = 3
         '
         'col_idProv
         '
@@ -100,19 +102,29 @@ Partial Class frm_listarProovedores
         Me.col_telefono.HeaderText = "Telefono"
         Me.col_telefono.Name = "col_telefono"
         '
+        'btn_agregar
+        '
+        Me.btn_agregar.Location = New System.Drawing.Point(324, 179)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_agregar.TabIndex = 4
+        Me.btn_agregar.Text = "Agregar"
+        Me.btn_agregar.UseVisualStyleBackColor = True
+        '
         'frm_listarProovedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(564, 223)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btn_agregar)
+        Me.Controls.Add(Me.dgv_proveedores)
         Me.Controls.Add(Me.lbl_proveedores)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_ext)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frm_listarProovedores"
-        Me.Text = "frm_listarProovedores"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Proveedores"
+        CType(Me.dgv_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -120,10 +132,11 @@ Partial Class frm_listarProovedores
     Friend WithEvents btn_ext As System.Windows.Forms.Button
     Friend WithEvents btn_delete As System.Windows.Forms.Button
     Friend WithEvents lbl_proveedores As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgv_proveedores As System.Windows.Forms.DataGridView
     Friend WithEvents col_idProv As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_razonSoc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_direccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_email As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btn_agregar As Button
 End Class

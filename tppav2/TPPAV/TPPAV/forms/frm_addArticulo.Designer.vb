@@ -31,7 +31,7 @@ Partial Class frm_addArticulo
         Me.txt_precXUnidad = New System.Windows.Forms.TextBox()
         Me.txt_precXCaja = New System.Windows.Forms.TextBox()
         Me.btn_add = New System.Windows.Forms.Button()
-        Me.btn_clear = New System.Windows.Forms.Button()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_nombre
@@ -77,7 +77,7 @@ Partial Class frm_addArticulo
         'txt_nomArticulo
         '
         Me.txt_nomArticulo.Location = New System.Drawing.Point(11, 24)
-        Me.txt_nomArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_nomArticulo.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_nomArticulo.Name = "txt_nomArticulo"
         Me.txt_nomArticulo.Size = New System.Drawing.Size(270, 20)
         Me.txt_nomArticulo.TabIndex = 4
@@ -85,7 +85,7 @@ Partial Class frm_addArticulo
         'rtxt_descripcion
         '
         Me.rtxt_descripcion.Location = New System.Drawing.Point(11, 61)
-        Me.rtxt_descripcion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rtxt_descripcion.Margin = New System.Windows.Forms.Padding(2)
         Me.rtxt_descripcion.Name = "rtxt_descripcion"
         Me.rtxt_descripcion.Size = New System.Drawing.Size(270, 38)
         Me.rtxt_descripcion.TabIndex = 5
@@ -94,7 +94,7 @@ Partial Class frm_addArticulo
         'txt_precXUnidad
         '
         Me.txt_precXUnidad.Location = New System.Drawing.Point(106, 113)
-        Me.txt_precXUnidad.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_precXUnidad.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_precXUnidad.Name = "txt_precXUnidad"
         Me.txt_precXUnidad.Size = New System.Drawing.Size(96, 20)
         Me.txt_precXUnidad.TabIndex = 6
@@ -102,7 +102,7 @@ Partial Class frm_addArticulo
         'txt_precXCaja
         '
         Me.txt_precXCaja.Location = New System.Drawing.Point(296, 115)
-        Me.txt_precXCaja.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_precXCaja.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_precXCaja.Name = "txt_precXCaja"
         Me.txt_precXCaja.Size = New System.Drawing.Size(103, 20)
         Me.txt_precXCaja.TabIndex = 7
@@ -110,29 +110,29 @@ Partial Class frm_addArticulo
         'btn_add
         '
         Me.btn_add.Location = New System.Drawing.Point(297, 163)
-        Me.btn_add.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_add.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(101, 27)
         Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Agregar articulo"
         Me.btn_add.UseVisualStyleBackColor = True
         '
-        'btn_clear
+        'btn_cancelar
         '
-        Me.btn_clear.Location = New System.Drawing.Point(185, 163)
-        Me.btn_clear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(94, 27)
-        Me.btn_clear.TabIndex = 9
-        Me.btn_clear.Text = "Limpiar campos"
-        Me.btn_clear.UseVisualStyleBackColor = True
+        Me.btn_cancelar.Location = New System.Drawing.Point(185, 163)
+        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(94, 27)
+        Me.btn_cancelar.TabIndex = 9
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = True
         '
         'frm_addArticulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(407, 200)
-        Me.Controls.Add(Me.btn_clear)
+        Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_precXCaja)
         Me.Controls.Add(Me.txt_precXUnidad)
@@ -142,7 +142,7 @@ Partial Class frm_addArticulo
         Me.Controls.Add(Me.lbl_precXCaja)
         Me.Controls.Add(Me.lbl_precXUni)
         Me.Controls.Add(Me.lbl_nombre)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frm_addArticulo"
         Me.Text = "Agregar nuevo articulo"
         Me.ResumeLayout(False)
@@ -158,5 +158,5 @@ Partial Class frm_addArticulo
     Friend WithEvents txt_precXUnidad As System.Windows.Forms.TextBox
     Friend WithEvents txt_precXCaja As System.Windows.Forms.TextBox
     Friend WithEvents btn_add As System.Windows.Forms.Button
-    Friend WithEvents btn_clear As System.Windows.Forms.Button
+    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
 End Class

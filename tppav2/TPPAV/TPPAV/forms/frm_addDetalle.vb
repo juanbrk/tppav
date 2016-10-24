@@ -1,6 +1,9 @@
-﻿Public Class frm_addDetalle
+﻿Imports System.ComponentModel
+
+Public Class frm_addDetalle
     Dim banderaCategoria As Boolean = False
     Dim detalle As New DetallePedido
+    Dim cerrar As Boolean = False
     Private Sub frm_addDetalle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim servicecat As CategoriaService = New CategoriaService
         Dim categorias As List(Of CategoriaArt) = servicecat.listarCategorias
@@ -30,7 +33,7 @@
     End Function
 
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
-
+        cerrar = True
         If cbo_categorias.SelectedIndex = -1 Then
             MsgBox("Debe seleccionar una categoría", MsgBoxStyle.Information)
             Return
@@ -71,8 +74,18 @@
         Else
             detalle.articulo = cbo_articulos.SelectedItem
         End If
+        cerrar = False
         Me.Close()
 
     End Sub
 
+    Private Sub frm_addDetalle_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        e.Cancel = cerrar
+        cerrar = False
+    End Sub
+
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        cerrar = False
+        Me.Close()
+    End Sub
 End Class

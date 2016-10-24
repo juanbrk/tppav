@@ -31,7 +31,7 @@ Partial Class frm_addProovedor
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.btn_add = New System.Windows.Forms.Button()
-        Me.btn_clear = New System.Windows.Forms.Button()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_rznSocial
@@ -77,7 +77,7 @@ Partial Class frm_addProovedor
         'txt_razonSocial
         '
         Me.txt_razonSocial.Location = New System.Drawing.Point(10, 29)
-        Me.txt_razonSocial.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_razonSocial.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_razonSocial.Name = "txt_razonSocial"
         Me.txt_razonSocial.Size = New System.Drawing.Size(321, 20)
         Me.txt_razonSocial.TabIndex = 4
@@ -85,7 +85,7 @@ Partial Class frm_addProovedor
         'txt_direccion
         '
         Me.txt_direccion.Location = New System.Drawing.Point(10, 64)
-        Me.txt_direccion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_direccion.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_direccion.Name = "txt_direccion"
         Me.txt_direccion.Size = New System.Drawing.Size(321, 20)
         Me.txt_direccion.TabIndex = 5
@@ -93,7 +93,7 @@ Partial Class frm_addProovedor
         'txt_email
         '
         Me.txt_email.Location = New System.Drawing.Point(10, 102)
-        Me.txt_email.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_email.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(134, 20)
         Me.txt_email.TabIndex = 6
@@ -101,7 +101,7 @@ Partial Class frm_addProovedor
         'txt_telefono
         '
         Me.txt_telefono.Location = New System.Drawing.Point(173, 101)
-        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(158, 20)
         Me.txt_telefono.TabIndex = 7
@@ -110,30 +110,31 @@ Partial Class frm_addProovedor
         '
         Me.btn_add.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btn_add.Location = New System.Drawing.Point(266, 149)
-        Me.btn_add.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btn_add.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(63, 25)
         Me.btn_add.TabIndex = 8
         Me.btn_add.Text = "Agregar"
         Me.btn_add.UseVisualStyleBackColor = True
         '
-        'btn_clear
+        'btn_cancelar
         '
-        Me.btn_clear.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_clear.Location = New System.Drawing.Point(173, 149)
-        Me.btn_clear.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(77, 25)
-        Me.btn_clear.TabIndex = 9
-        Me.btn_clear.Text = "Cancelar"
-        Me.btn_clear.UseVisualStyleBackColor = True
+        Me.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btn_cancelar.Location = New System.Drawing.Point(173, 149)
+        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(77, 25)
+        Me.btn_cancelar.TabIndex = 9
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = True
         '
         'frm_addProovedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(339, 180)
-        Me.Controls.Add(Me.btn_clear)
+        Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_telefono)
         Me.Controls.Add(Me.txt_email)
@@ -143,7 +144,7 @@ Partial Class frm_addProovedor
         Me.Controls.Add(Me.lbl_email)
         Me.Controls.Add(Me.lbl_direccion)
         Me.Controls.Add(Me.lbl_rznSocial)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frm_addProovedor"
         Me.Text = "Agregar nuevo proveedor"
         Me.ResumeLayout(False)
@@ -159,5 +160,5 @@ Partial Class frm_addProovedor
     Friend WithEvents txt_email As System.Windows.Forms.TextBox
     Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
     Friend WithEvents btn_add As System.Windows.Forms.Button
-    Friend WithEvents btn_clear As System.Windows.Forms.Button
+    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
 End Class

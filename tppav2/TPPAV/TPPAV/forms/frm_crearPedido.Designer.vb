@@ -172,7 +172,6 @@ Partial Class frm_crearPedido
         '
         'btn_reg_pedido
         '
-        Me.btn_reg_pedido.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btn_reg_pedido.Location = New System.Drawing.Point(381, 507)
         Me.btn_reg_pedido.Name = "btn_reg_pedido"
         Me.btn_reg_pedido.Size = New System.Drawing.Size(94, 23)
@@ -182,7 +181,6 @@ Partial Class frm_crearPedido
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btn_cancelar.Location = New System.Drawing.Point(266, 507)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
