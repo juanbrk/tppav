@@ -50,6 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -85,64 +86,64 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_addBarrio.Designer.vb">
+    <Compile Include="forms\Barrio\frm_addBarrio.Designer.vb">
       <DependentUpon>frm_addBarrio.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_addBarrio.vb">
+    <Compile Include="forms\Barrio\frm_addBarrio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_addClientes.Designer.vb">
+    <Compile Include="forms\Cliente\frm_addClientes.Designer.vb">
       <DependentUpon>frm_addClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_addClientes.vb">
+    <Compile Include="forms\Cliente\frm_addClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_addDetalle.Designer.vb">
+    <Compile Include="forms\Pedido\frm_addDetalle.Designer.vb">
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_addDetalle.vb">
+    <Compile Include="forms\Pedido\frm_addDetalle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_addProovedor.Designer.vb">
+    <Compile Include="forms\Proveedor\frm_addProovedor.Designer.vb">
       <DependentUpon>frm_addProovedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_addProovedor.vb">
+    <Compile Include="forms\Proveedor\frm_addProovedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_addArticulo.Designer.vb">
+    <Compile Include="forms\Articulo\frm_addArticulo.Designer.vb">
       <DependentUpon>frm_addArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_addArticulo.vb">
+    <Compile Include="forms\Articulo\frm_addArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_addCategoriaArticulo.Designer.vb">
+    <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.Designer.vb">
       <DependentUpon>frm_addCategoriaArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_addCategoriaArticulo.vb">
+    <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_crearPedido.Designer.vb">
+    <Compile Include="forms\Pedido\frm_crearPedido.Designer.vb">
       <DependentUpon>frm_crearPedido.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_crearPedido.vb">
+    <Compile Include="forms\Pedido\frm_crearPedido.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_listarClientes.Designer.vb">
+    <Compile Include="forms\Cliente\frm_listarClientes.Designer.vb">
       <DependentUpon>frm_listarClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_listarClientes.vb">
+    <Compile Include="forms\Cliente\frm_listarClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_listarPedidos.Designer.vb">
+    <Compile Include="forms\Pedido\frm_listarPedidos.Designer.vb">
       <DependentUpon>frm_listarPedidos.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_listarPedidos.vb">
+    <Compile Include="forms\Pedido\frm_listarPedidos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_listarProovedores.Designer.vb">
+    <Compile Include="forms\Proveedor\frm_listarProovedores.Designer.vb">
       <DependentUpon>frm_listarProovedores.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_listarProovedores.vb">
+    <Compile Include="forms\Proveedor\frm_listarProovedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frm_principal.Designer.vb">
@@ -157,11 +158,16 @@
     <Compile Include="forms\frm_usrLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frm_listarBarrios.Designer.vb">
+    <Compile Include="forms\Barrio\frm_listarBarrios.Designer.vb">
       <DependentUpon>frm_listarBarrios.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_listarBarrios.vb">
+    <Compile Include="forms\Barrio\frm_listarBarrios.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Reportes\DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Articulo.vb" />
     <Compile Include="Modelo\Barrio.vb" />
@@ -193,34 +199,34 @@
     <Compile Include="Servicios\ProveedorService.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="forms\frm_addBarrio.resx">
+    <EmbeddedResource Include="forms\Barrio\frm_addBarrio.resx">
       <DependentUpon>frm_addBarrio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_addClientes.resx">
+    <EmbeddedResource Include="forms\Cliente\frm_addClientes.resx">
       <DependentUpon>frm_addClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_addDetalle.resx">
+    <EmbeddedResource Include="forms\Pedido\frm_addDetalle.resx">
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_addProovedor.resx">
+    <EmbeddedResource Include="forms\Proveedor\frm_addProovedor.resx">
       <DependentUpon>frm_addProovedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_addArticulo.resx">
+    <EmbeddedResource Include="forms\Articulo\frm_addArticulo.resx">
       <DependentUpon>frm_addArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_addCategoriaArticulo.resx">
+    <EmbeddedResource Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.resx">
       <DependentUpon>frm_addCategoriaArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_crearPedido.resx">
+    <EmbeddedResource Include="forms\Pedido\frm_crearPedido.resx">
       <DependentUpon>frm_crearPedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_listarClientes.resx">
+    <EmbeddedResource Include="forms\Cliente\frm_listarClientes.resx">
       <DependentUpon>frm_listarClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_listarPedidos.resx">
+    <EmbeddedResource Include="forms\Pedido\frm_listarPedidos.resx">
       <DependentUpon>frm_listarPedidos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_listarProovedores.resx">
+    <EmbeddedResource Include="forms\Proveedor\frm_listarProovedores.resx">
       <DependentUpon>frm_listarProovedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_principal.resx">
@@ -229,7 +235,7 @@
     <EmbeddedResource Include="forms\frm_usrLogin.resx">
       <DependentUpon>frm_usrLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\frm_listarBarrios.resx">
+    <EmbeddedResource Include="forms\Barrio\frm_listarBarrios.resx">
       <DependentUpon>frm_listarBarrios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -240,6 +246,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="forms\Reportes\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="forms\Reportes\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="forms\Reportes\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
