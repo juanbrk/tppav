@@ -8,6 +8,14 @@
         Return pedidao.getAll()
     End Function
 
+    Public Function listarPedidosEntreFechas(ByVal desde As String, ByVal hasta As String) As DataTable
+        Return pedidao.getAllEntreFechas(desde, hasta)
+    End Function
+
+    Public Function listarPedidosDeCliente(ByVal id As String) As DataTable
+        Return pedidao.getAllDeCliente(id)
+    End Function
+
     Public Function darDeBajaPedido(id As Integer) As Integer
         Return pedidao.darDeBaja(id)
     End Function

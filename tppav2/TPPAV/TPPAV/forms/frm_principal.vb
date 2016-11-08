@@ -56,4 +56,17 @@
         Dim listar As frm_listarBarrios = New frm_listarBarrios
         listar.ShowDialog()
     End Sub
+
+    Private Sub frm_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
+        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+        'TODO: This line of code loads data into the 'DataSet1.Pedido' table. You can move, or remove it, as needed.
+        Me.PedidoTableAdapter.Fill(Me.DataSet1.Pedido)
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim rep As New frm_rep
+        rep.ShowDialog()
+    End Sub
 End Class

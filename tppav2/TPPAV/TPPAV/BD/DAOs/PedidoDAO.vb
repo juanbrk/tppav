@@ -27,6 +27,18 @@ Public Class PedidoDAO
         Return listaPedidos
     End Function
 
+    Friend Function getAllDeCliente(ByVal id As String) As DataTable
+        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT p.*,(c.Nombre + ' ' + c.Apellido) as Nombre FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id WHERE p.Cliente_id=" + id)
+
+        Return data
+    End Function
+
+    Friend Function getAllEntreFechas(ByVal desde As String, ByVal hasta As String) As DataTable
+        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT p.*,(c.Nombre + ' ' + c.Apellido) as Nombre FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id WHERE p.Fecha_entrega BETWEEN '" + desde + "' AND '" + hasta + "'")
+
+        Return data
+    End Function
+
     Friend Function darDeBaja(id As Integer) As Integer
         Throw New NotImplementedException()
     End Function

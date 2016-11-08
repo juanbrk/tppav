@@ -22,6 +22,7 @@ Partial Class frm_principal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AñadirNuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,7 +42,19 @@ Partial Class frm_principal
         Me.BarriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AñadirNuevoToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarTodosToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New TPPAV.DataSet1()
+        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PedidoTableAdapter = New TPPAV.DataSet1TableAdapters.PedidoTableAdapter()
+        Me.DataTable1TableAdapter = New TPPAV.DataSet1TableAdapters.DataTable1TableAdapter()
+        Me.Pedido2TableAdapter1 = New TPPAV.DataSet1TableAdapters.Pedido2TableAdapter()
+        Me.Pedido2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -50,7 +63,7 @@ Partial Class frm_principal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PedidosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ArticulosToolStripMenuItem, Me.CategoriasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.BarriosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(751, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(653, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -64,13 +77,13 @@ Partial Class frm_principal
         'AñadirNuevoToolStripMenuItem
         '
         Me.AñadirNuevoToolStripMenuItem.Name = "AñadirNuevoToolStripMenuItem"
-        Me.AñadirNuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AñadirNuevoToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.AñadirNuevoToolStripMenuItem.Text = "Añadir nuevo"
         '
         'ListarTodosToolStripMenuItem
         '
         Me.ListarTodosToolStripMenuItem.Name = "ListarTodosToolStripMenuItem"
-        Me.ListarTodosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListarTodosToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.ListarTodosToolStripMenuItem.Text = "Listar todos"
         '
         'ClientesToolStripMenuItem
@@ -83,13 +96,13 @@ Partial Class frm_principal
         'AñadirNuevoToolStripMenuItem1
         '
         Me.AñadirNuevoToolStripMenuItem1.Name = "AñadirNuevoToolStripMenuItem1"
-        Me.AñadirNuevoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AñadirNuevoToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
         Me.AñadirNuevoToolStripMenuItem1.Text = "Añadir nuevo"
         '
         'ListarTodosToolStripMenuItem1
         '
         Me.ListarTodosToolStripMenuItem1.Name = "ListarTodosToolStripMenuItem1"
-        Me.ListarTodosToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ListarTodosToolStripMenuItem1.Size = New System.Drawing.Size(145, 22)
         Me.ListarTodosToolStripMenuItem1.Text = "Listar todos"
         '
         'ArticulosToolStripMenuItem
@@ -102,13 +115,13 @@ Partial Class frm_principal
         'AñadirNuevoToolStripMenuItem2
         '
         Me.AñadirNuevoToolStripMenuItem2.Name = "AñadirNuevoToolStripMenuItem2"
-        Me.AñadirNuevoToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.AñadirNuevoToolStripMenuItem2.Size = New System.Drawing.Size(145, 22)
         Me.AñadirNuevoToolStripMenuItem2.Text = "Añadir nuevo"
         '
         'ListarTodosToolStripMenuItem2
         '
         Me.ListarTodosToolStripMenuItem2.Name = "ListarTodosToolStripMenuItem2"
-        Me.ListarTodosToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.ListarTodosToolStripMenuItem2.Size = New System.Drawing.Size(145, 22)
         Me.ListarTodosToolStripMenuItem2.Text = "Listar todos"
         '
         'CategoriasToolStripMenuItem
@@ -121,13 +134,13 @@ Partial Class frm_principal
         'AñadirNuevoToolStripMenuItem3
         '
         Me.AñadirNuevoToolStripMenuItem3.Name = "AñadirNuevoToolStripMenuItem3"
-        Me.AñadirNuevoToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.AñadirNuevoToolStripMenuItem3.Size = New System.Drawing.Size(145, 22)
         Me.AñadirNuevoToolStripMenuItem3.Text = "Añadir nuevo"
         '
         'ListarTodosToolStripMenuItem3
         '
         Me.ListarTodosToolStripMenuItem3.Name = "ListarTodosToolStripMenuItem3"
-        Me.ListarTodosToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ListarTodosToolStripMenuItem3.Size = New System.Drawing.Size(145, 22)
         Me.ListarTodosToolStripMenuItem3.Text = "Listar todos"
         '
         'ProveedoresToolStripMenuItem
@@ -140,13 +153,13 @@ Partial Class frm_principal
         'AñadirNuevoToolStripMenuItem4
         '
         Me.AñadirNuevoToolStripMenuItem4.Name = "AñadirNuevoToolStripMenuItem4"
-        Me.AñadirNuevoToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.AñadirNuevoToolStripMenuItem4.Size = New System.Drawing.Size(145, 22)
         Me.AñadirNuevoToolStripMenuItem4.Text = "Añadir nuevo"
         '
         'ListarTodosToolStripMenuItem4
         '
         Me.ListarTodosToolStripMenuItem4.Name = "ListarTodosToolStripMenuItem4"
-        Me.ListarTodosToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.ListarTodosToolStripMenuItem4.Size = New System.Drawing.Size(145, 22)
         Me.ListarTodosToolStripMenuItem4.Text = "Listar todos"
         '
         'BarriosToolStripMenuItem
@@ -159,26 +172,72 @@ Partial Class frm_principal
         'AñadirNuevoToolStripMenuItem5
         '
         Me.AñadirNuevoToolStripMenuItem5.Name = "AñadirNuevoToolStripMenuItem5"
-        Me.AñadirNuevoToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.AñadirNuevoToolStripMenuItem5.Size = New System.Drawing.Size(145, 22)
         Me.AñadirNuevoToolStripMenuItem5.Text = "Añadir nuevo"
         '
         'ListarTodosToolStripMenuItem5
         '
         Me.ListarTodosToolStripMenuItem5.Name = "ListarTodosToolStripMenuItem5"
-        Me.ListarTodosToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ListarTodosToolStripMenuItem5.Size = New System.Drawing.Size(145, 22)
         Me.ListarTodosToolStripMenuItem5.Text = "Listar todos"
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PedidoBindingSource
+        '
+        Me.PedidoBindingSource.DataMember = "Pedido"
+        Me.PedidoBindingSource.DataSource = Me.DataSet1
+        '
+        'PedidoTableAdapter
+        '
+        Me.PedidoTableAdapter.ClearBeforeFill = True
+        '
+        'DataTable1TableAdapter
+        '
+        Me.DataTable1TableAdapter.ClearBeforeFill = True
+        '
+        'Pedido2TableAdapter1
+        '
+        Me.Pedido2TableAdapter1.ClearBeforeFill = True
+        '
+        'Pedido2BindingSource
+        '
+        Me.Pedido2BindingSource.DataMember = "Pedido2"
+        Me.Pedido2BindingSource.DataSource = Me.DataSet1
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(79, 98)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 55)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Reportes"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(751, 355)
+        Me.ClientSize = New System.Drawing.Size(653, 243)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frm_principal"
         Me.Text = "frm_principal"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,4 +262,12 @@ Partial Class frm_principal
     Friend WithEvents BarriosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AñadirNuevoToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents ListarTodosToolStripMenuItem5 As ToolStripMenuItem
+    Friend WithEvents PedidoBindingSource As BindingSource
+    Friend WithEvents DataSet1 As DataSet1
+    Friend WithEvents PedidoTableAdapter As DataSet1TableAdapters.PedidoTableAdapter
+    Friend WithEvents DataTable1BindingSource As BindingSource
+    Friend WithEvents DataTable1TableAdapter As DataSet1TableAdapters.DataTable1TableAdapter
+    Friend WithEvents Pedido2TableAdapter1 As DataSet1TableAdapters.Pedido2TableAdapter
+    Friend WithEvents Pedido2BindingSource As BindingSource
+    Friend WithEvents Button1 As Button
 End Class
