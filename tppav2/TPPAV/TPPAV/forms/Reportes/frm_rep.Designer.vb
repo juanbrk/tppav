@@ -24,6 +24,7 @@ Partial Class frm_rep
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,12 +41,15 @@ Partial Class frm_rep
         Me.DataSet1 = New TPPAV.DataSet1()
         Me.Pedido2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Pedido2TableAdapter = New TPPAV.DataSet1TableAdapters.Pedido2TableAdapter()
-        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btn_cerrar = New System.Windows.Forms.Button()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PedidoBindingSource
+        '
+        Me.PedidoBindingSource.DataSource = GetType(TPPAV.Pedido)
         '
         'Label7
         '
@@ -179,10 +183,6 @@ Partial Class frm_rep
         '
         Me.Pedido2TableAdapter.ClearBeforeFill = True
         '
-        'PedidoBindingSource
-        '
-        Me.PedidoBindingSource.DataSource = GetType(TPPAV.Pedido)
-        '
         'btn_cerrar
         '
         Me.btn_cerrar.Location = New System.Drawing.Point(705, 589)
@@ -212,10 +212,10 @@ Partial Class frm_rep
         Me.Controls.Add(Me.cbo_clientes)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_rep"
-        Me.Text = "frm_rep"
+        Me.Text = "Reportes de Pedidos"
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

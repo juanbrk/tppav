@@ -7,4 +7,8 @@
     Public Function listarCategorias() As List(Of CategoriaArt)
         Return catDao.getAll()
     End Function
+
+    Public Function addCategoria(ByVal cat As CategoriaArt)
+        Return catDao.add(cat)
+    End Function
 End Class

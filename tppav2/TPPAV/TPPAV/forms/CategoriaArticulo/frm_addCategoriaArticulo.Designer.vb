@@ -25,7 +25,7 @@ Partial Class frm_addCategoriaArticulo
         Me.btn_add = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.txt_nomCate = New System.Windows.Forms.TextBox()
-        Me.rtx_descripcion = New System.Windows.Forms.RichTextBox()
+        Me.txt_descripcion = New System.Windows.Forms.RichTextBox()
         Me.lbl_nomCat = New System.Windows.Forms.Label()
         Me.lbl_descripcion = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -58,14 +58,14 @@ Partial Class frm_addCategoriaArticulo
         Me.txt_nomCate.Size = New System.Drawing.Size(319, 20)
         Me.txt_nomCate.TabIndex = 2
         '
-        'rtx_descripcion
+        'txt_descripcion
         '
-        Me.rtx_descripcion.Location = New System.Drawing.Point(12, 72)
-        Me.rtx_descripcion.Margin = New System.Windows.Forms.Padding(2)
-        Me.rtx_descripcion.Name = "rtx_descripcion"
-        Me.rtx_descripcion.Size = New System.Drawing.Size(318, 79)
-        Me.rtx_descripcion.TabIndex = 3
-        Me.rtx_descripcion.Text = ""
+        Me.txt_descripcion.Location = New System.Drawing.Point(12, 72)
+        Me.txt_descripcion.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_descripcion.Name = "txt_descripcion"
+        Me.txt_descripcion.Size = New System.Drawing.Size(318, 79)
+        Me.txt_descripcion.TabIndex = 3
+        Me.txt_descripcion.Text = ""
         '
         'lbl_nomCat
         '
@@ -94,7 +94,7 @@ Partial Class frm_addCategoriaArticulo
         Me.ClientSize = New System.Drawing.Size(339, 192)
         Me.Controls.Add(Me.lbl_descripcion)
         Me.Controls.Add(Me.lbl_nomCat)
-        Me.Controls.Add(Me.rtx_descripcion)
+        Me.Controls.Add(Me.txt_descripcion)
         Me.Controls.Add(Me.txt_nomCate)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_add)
@@ -108,7 +108,7 @@ Partial Class frm_addCategoriaArticulo
     Friend WithEvents btn_add As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents txt_nomCate As System.Windows.Forms.TextBox
-    Friend WithEvents rtx_descripcion As System.Windows.Forms.RichTextBox
+    Friend WithEvents txt_descripcion As System.Windows.Forms.RichTextBox
     Friend WithEvents lbl_nomCat As System.Windows.Forms.Label
     Friend WithEvents lbl_descripcion As System.Windows.Forms.Label
 End Class
