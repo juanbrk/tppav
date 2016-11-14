@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\MSQLSERVER;Initial Catalog=Tppav;Persist Security Info=True"& _ 
-            ";User ID=sa;Password=dijstra")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QCJTRBS\MSQLSERVER;Initial Catalog=Tppav;Persist Security Inf"& _ 
+            "o=True;User ID=sa;Password=dijstra")>  _
         Public ReadOnly Property TppavConnectionString() As String
             Get
                 Return CType(Me("TppavConnectionString"),String)

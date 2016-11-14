@@ -45,6 +45,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -121,9 +124,7 @@
     <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.Designer.vb">
       <DependentUpon>frm_addCategoriaArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.vb" />
     <Compile Include="forms\Pedido\frm_crearPedido.Designer.vb">
       <DependentUpon>frm_crearPedido.vb</DependentUpon>
     </Compile>
@@ -151,9 +152,7 @@
     <Compile Include="forms\frm_principal.Designer.vb">
       <DependentUpon>frm_principal.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_principal.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\frm_principal.vb" />
     <Compile Include="forms\frm_usrLogin.designer.vb">
       <DependentUpon>frm_usrLogin.vb</DependentUpon>
     </Compile>
@@ -174,9 +173,7 @@
     <Compile Include="forms\Reportes\frm_rep.Designer.vb">
       <DependentUpon>frm_rep.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\Reportes\frm_rep.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\Reportes\frm_rep.vb" />
     <Compile Include="Modelo\Articulo.vb" />
     <Compile Include="Modelo\Barrio.vb" />
     <Compile Include="Modelo\CategoriaArt.vb" />
@@ -269,6 +266,7 @@
     <None Include="forms\Reportes\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

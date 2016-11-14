@@ -20,9 +20,9 @@ Public Class ClienteDAO
                 .barrio.nombre = row.Item("nombar").ToString
                 '.zona = row.Item("Zona").ToString cambiar para conseguir el barrio
                 If Not TypeOf row.Item("Telefono") Is DBNull Then
-                    .telefono = row.Item("Telefono").ToString
+                    .telefono = Convert.ToInt32(row.Item("Telefono").ToString)
                 Else
-                    .telefono = "0"
+                    .telefono = 0
                 End If
             End With
             clientes.Add(cli)
@@ -43,7 +43,7 @@ Public Class ClienteDAO
 
     Public Function addCliente(ByVal cli As Cliente) As Integer
         Dim strsql As String = "INSERT INTO Clientes (Nombre,Apellido,Direccion,Telefono,barrio_id) VALUES ('" & cli.nombre & "','" &
-            cli.apellido & "','" & cli.direccion & "', '" & cli.telefono & "', " & cli.barrio.ID_BARRIO.ToString & ")"
+            cli.apellido & "','" & cli.direccion & "', " & cli.telefono & ", " & cli.barrio.ID_BARRIO & ")"
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception
@@ -52,8 +52,8 @@ Public Class ClienteDAO
     End Function
 
     Public Function updateCliente(ByVal cli As Cliente) As Integer
-        Dim strsql As String = "UPDATE Clientes SET Nombre='" & cli.nombre & "', Apellido='" & cli.apellido & "', Direccion='" & cli.direccion & "', barrio_id=" &
-            cli.barrio.ID_BARRIO & ", Telefono='" & cli.telefono & "' WHERE Cliente_id=" & cli.idCliente
+        Dim strsql As String = "UPDATE Clientes SET Nombre='" & cli.nombre & "', Apellido='" & cli.apellido & "', Direccion='" & cli.direccion & "', id_barrio=" &
+            cli.barrio.ID_BARRIO & ", Telefono=" & cli.telefono & " WHERE Cliente_id=" & cli.idCliente
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception

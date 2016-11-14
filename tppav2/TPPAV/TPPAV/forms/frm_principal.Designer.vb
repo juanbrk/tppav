@@ -50,6 +50,7 @@ Partial Class frm_principal
         Me.Pedido2TableAdapter1 = New TPPAV.DataSet1TableAdapters.Pedido2TableAdapter()
         Me.Pedido2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,7 +64,7 @@ Partial Class frm_principal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PedidosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ArticulosToolStripMenuItem, Me.CategoriasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.BarriosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(653, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(592, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -215,23 +216,33 @@ Partial Class frm_principal
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(79, 98)
+        Me.Button1.Location = New System.Drawing.Point(55, 90)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 55)
+        Me.Button1.Size = New System.Drawing.Size(195, 84)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Reportes"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(333, 90)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(195, 84)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Estadísticas"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(653, 243)
+        Me.ClientSize = New System.Drawing.Size(592, 243)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frm_principal"
-        Me.Text = "frm_principal"
+        Me.Text = "Gestión de Pedidos"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -270,4 +281,5 @@ Partial Class frm_principal
     Friend WithEvents Pedido2TableAdapter1 As DataSet1TableAdapters.Pedido2TableAdapter
     Friend WithEvents Pedido2BindingSource As BindingSource
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

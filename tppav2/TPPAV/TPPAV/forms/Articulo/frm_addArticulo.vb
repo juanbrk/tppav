@@ -15,14 +15,4 @@ Public Class frm_addArticulo
         e.Cancel = cerrar
         cerrar = False
     End Sub
-
-    Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
-        Dim art As New Articulo
-        cerrar = True
-        If txt_nomArticulo.Text = String.Empty Then
-            MsgBox("Debe ingresar un nombre de articulo")
-        ElseIf txt_precXUnidad.Text = String.Empty Then
-            MsgBox("Debe ingresar un precio unitario")
-        End If
-    End Sub
 End Class
