@@ -178,7 +178,7 @@ Partial Class frm_listarPedidos
         Me.Controls.Add(Me.dgv_detalles)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frm_listarPedidos"
-        Me.Text = "frm_listarPedidos"
+        Me.Text = "Listado de Pedidos"
         CType(Me.dgv_detalles, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -47,7 +47,7 @@ Public Class frm_addClientes
 
             Try
                 'el telefono se setea dentro del try porque el parse puede dar error'
-                cli.telefono = Integer.Parse(txt_telefono.Text)
+                cli.telefono = txt_telefono.Text
                 'agregamos un NUEVO cliente, por la bandera nos dimos cuenta que habia que agregarlo'
                 If clien.agregarCliente(cli) = 1 Then
                     MsgBox("Cliente agregado con éxito")
@@ -62,7 +62,7 @@ Public Class frm_addClientes
             End Try
         Else
             Try
-                cli.telefono = Integer.Parse(txt_telefono.Text)
+                cli.telefono = txt_telefono.Text
                 'modificamos un cliente ya existente en la base de datos'
 
                 If clien.updateCliente(cli) = 1 Then

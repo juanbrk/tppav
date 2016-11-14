@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Conexion
-    Private conexion_string As String = "Data Source=DESKTOP-QCJTRBS\MSQLSERVER;Initial Catalog=Tppav;Persist Security Info=True;User ID=sa;Password=dijstra"
+    Private conexion_string As String = "Data Source=localhost\MSQLSERVER;Initial Catalog=Tppav;Persist Security Info=True;User ID=sa;Password=dijstra"
+    'DESKTOP-C3QSPCC\MSQLSERVER notebook
+    'DESKTOP-QCJTRBS\MSQLSERVER desk
 
     Public Function getCommander() As SqlCommand
         Dim conexion As New SqlConnection

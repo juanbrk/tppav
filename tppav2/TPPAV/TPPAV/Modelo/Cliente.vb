@@ -4,7 +4,7 @@
     Public Property apellido As String
     Public Property direccion As String
     Public Property barrio As Barrio
-    Public Property telefono As Integer
+    Public Property telefono As String
 
     'Override al toString para poder llamarlo desde el dataGridView
     Public Overrides Function toString() As String
