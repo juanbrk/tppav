@@ -24,4 +24,13 @@ Public Class CategoriaDAO
         Next
         Return listaCategorias
     End Function
+
+    Friend Function add(cat As CategoriaArt) As Object
+        Dim strsql As String = "INSERT INTO Categoria_articulo (Nombre,Descripcion) VALUES ('" & cat.nombre & "','" + cat.descripcion + "')"
+        Try
+            Return BdHelper.getDBHelper().ejecutarSQL(strsql)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class
