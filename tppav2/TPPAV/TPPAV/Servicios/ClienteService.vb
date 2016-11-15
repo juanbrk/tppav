@@ -19,4 +19,8 @@
     Public Function updateCliente(cli As Cliente) As Integer
         Return clidao.updateCliente(cli)
     End Function
+
+    Friend Function pedidosPorMes(mes As Integer) As DataTable
+        Return clidao.pedidosPorMes(mes)
+    End Function
 End Class

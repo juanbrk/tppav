@@ -103,6 +103,12 @@
     <Compile Include="forms\Cliente\frm_addClientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="forms\Estadisticas\frm_estadisticas.Designer.vb">
+      <DependentUpon>frm_estadisticas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Estadisticas\frm_estadisticas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Pedido\frm_addDetalle.Designer.vb">
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </Compile>
@@ -124,7 +130,9 @@
     <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.Designer.vb">
       <DependentUpon>frm_addCategoriaArticulo.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.vb" />
+    <Compile Include="forms\CategoriaArticulo\frm_addCategoriaArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Pedido\frm_crearPedido.Designer.vb">
       <DependentUpon>frm_crearPedido.vb</DependentUpon>
     </Compile>
@@ -152,7 +160,9 @@
     <Compile Include="forms\frm_principal.Designer.vb">
       <DependentUpon>frm_principal.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\frm_principal.vb" />
+    <Compile Include="forms\frm_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\frm_usrLogin.designer.vb">
       <DependentUpon>frm_usrLogin.vb</DependentUpon>
     </Compile>
@@ -173,7 +183,9 @@
     <Compile Include="forms\Reportes\frm_rep.Designer.vb">
       <DependentUpon>frm_rep.vb</DependentUpon>
     </Compile>
-    <Compile Include="forms\Reportes\frm_rep.vb" />
+    <Compile Include="forms\Reportes\frm_rep.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modelo\Articulo.vb" />
     <Compile Include="Modelo\Barrio.vb" />
     <Compile Include="Modelo\CategoriaArt.vb" />
@@ -210,6 +222,10 @@
     <EmbeddedResource Include="forms\Cliente\frm_addClientes.resx">
       <DependentUpon>frm_addClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Estadisticas\frm_estadisticas.resx">
+      <DependentUpon>frm_estadisticas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Estadisticas\Report2.rdlc" />
     <EmbeddedResource Include="forms\Pedido\frm_addDetalle.resx">
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +271,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="forms\Reportes\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

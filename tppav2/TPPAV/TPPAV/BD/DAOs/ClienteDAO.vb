@@ -31,6 +31,13 @@ Public Class ClienteDAO
         Return clientes
     End Function
 
+    Friend Function pedidosPorMes(mes As Integer) As DataTable
+        Dim str As String = "SELECT c.Cliente_id,c.Nombre,c.Apellido,COUNT(p.Pedido_id) FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id " +
+            "WHERE MONTH(p.Fecha_entrega)=" + mes.ToString +
+            " GROUP BY c.Cliente_id,c.Nombre,c.Apellido"
+        Return BdHelper.getDBHelper.ConsultaSQL(str)
+    End Function
+
     Public Function darDeBaja(ByVal id As Integer) As Integer
         Dim strsql As String = "DELETE FROM Clientes WHERE Cliente_id=" & id
         Try

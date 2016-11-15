@@ -87,6 +87,7 @@
         Dim pedidoservice As PedidoService = New PedidoService
         If pedidoservice.agregarPedido(pedido) = 1 Then
             MsgBox("Se ha registrado el pedido!")
+            Me.Close()
         Else
             MsgBox("Hubo un error al registrar el pedido")
         End If

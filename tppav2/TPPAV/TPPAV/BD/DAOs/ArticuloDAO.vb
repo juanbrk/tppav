@@ -76,7 +76,21 @@ Public Class ArticuloDAO
     End Function
 
     Friend Function addArticulo(art As Articulo) As Integer
-        Throw New NotImplementedException()
+        Dim strsql As String
+        If art.proveedor Is Nothing Then
+            strsql = "INSERT INTO Articulo (Nombre,Descripcion,Precio_unidad,Precio_caja,Categoria_id) VALUES ('" + art.nombre + "','" +
+            art.descripcion + "'," + art.precioU.ToString + ", " + art.precioCaja.ToString + ", " + art.categoria.idCat.ToString + ")"
+        Else
+            strsql = "INSERT INTO Articulo (Nombre,Descripcion,Precio_unidad,Precio_caja,Categoria_id,Proveedor_id) VALUES ('" + art.nombre + "','" +
+            art.descripcion + "'," + art.precioU.ToString + ", " + art.precioCaja.ToString + ", " + art.categoria.idCat.ToString + "," + art.proveedor.idProveedor.ToString + ")"
+        End If
+
+        Try
+            Return BdHelper.getDBHelper().ejecutarSQL(strsql)
+        Catch ex As Exception
+            Throw ex
+            Return 0
+        End Try
     End Function
 
     Friend Function updateArticulo(art As Articulo) As Integer

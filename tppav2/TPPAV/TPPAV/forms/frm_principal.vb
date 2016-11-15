@@ -63,10 +63,22 @@
         'TODO: This line of code loads data into the 'DataSet1.Pedido' table. You can move, or remove it, as needed.
         Me.PedidoTableAdapter.Fill(Me.DataSet1.Pedido)
 
+        Dim logueo As New frm_usrLogin
+        logueo.ShowDialog()
+        If logueo.getValidado Then
+            Label2.Text = logueo.getUsuario
+        Else
+            Me.Close()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim rep As New frm_rep
         rep.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim est As New frm_estadisticas
+        est.ShowDialog()
     End Sub
 End Class
