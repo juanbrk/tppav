@@ -59,9 +59,9 @@
 
     Private Sub frm_principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DataSet1.DataTable1' table. You can move, or remove it, as needed.
-        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+        'Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
         'TODO: This line of code loads data into the 'DataSet1.Pedido' table. You can move, or remove it, as needed.
-        Me.PedidoTableAdapter.Fill(Me.DataSet1.Pedido)
+        'Me.PedidoTableAdapter.Fill(Me.DataSet1.Pedido)
 
         Dim logueo As New frm_usrLogin
         logueo.ShowDialog()
