@@ -20,9 +20,9 @@ Public Class ClienteDAO
                 .barrio.nombre = row.Item("nombar").ToString
                 '.zona = row.Item("Zona").ToString cambiar para conseguir el barrio
                 If Not TypeOf row.Item("Telefono") Is DBNull Then
-                    .telefono = Convert.ToInt32(row.Item("Telefono").ToString)
+                    .telefono = row.Item("Telefono").ToString
                 Else
-                    .telefono = 0
+                    .telefono = "Sin numero"
                 End If
             End With
             clientes.Add(cli)
