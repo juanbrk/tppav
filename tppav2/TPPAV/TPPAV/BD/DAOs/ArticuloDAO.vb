@@ -35,7 +35,7 @@ Public Class ArticuloDAO
     End Function
 
     Friend Function articulosDeCategoria(catID As String) As List(Of Articulo)
-        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT a.*, c.Nombre as nomart, p.Razon_social as nomprov FROM Articulo a JOIN Categoria_articulo c on a.Categoria_id=c.Id_categoria JOIN Proveedores p ON p.Id_proveedor=a.Proveedor_id WHERE a.Categoria_id=" + catID)
+        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT a.*, c.Nombre as nomart FROM Articulo a JOIN Categoria_articulo c on a.Categoria_id=c.Id_categoria WHERE a.Categoria_id=" + catID)
 
         Dim art As Articulo
         Dim listaArticulos As New List(Of Articulo)
@@ -46,8 +46,7 @@ Public Class ArticuloDAO
                 .nombre = row.Item("Nombre").ToString
                 .categoria = New CategoriaArt
                 .categoria.nombre = row.Item("nomart").ToString()
-                .proveedor = New Proveedor
-                .proveedor.razon_social = row.Item("nomprov").ToString()
+                .precioU = Double.Parse(row.Item("Precio_unidad").ToString)
                 If Not IsDBNull(row.Item("Precio_caja")) Then
 
                     .precioCaja = Convert.ToDouble(row.Item("Precio_caja").ToString)

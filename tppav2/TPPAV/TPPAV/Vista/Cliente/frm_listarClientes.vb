@@ -5,11 +5,11 @@
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
         'de la fila seleccionada agarro la celda de la columna col_id y tomo el valor, ese valor lo paso a Integer'
-        Dim id_cli = Integer.Parse(dgv_listaClientes.CurrentRow.Cells.Item("col_id").Value)
+        Dim cli As Cliente = dgv_listaClientes.CurrentRow.DataBoundItem
         'uso el servicio de cliente, que es el que se comunica con los daos que se comunican con la bd'
         Dim clienteService As New ClienteService
         'llamo al metodo darDeBajaCliente del servicio de cliente, y le paso el id'
-        clienteService.darDeBajaCliente(id_cli)
+        clienteService.darDeBajaCliente(cli.idCliente)
         'cargo la grilla de nuevo, para simular que se refresca'
         Me.cargarGrilla()
     End Sub
@@ -17,13 +17,19 @@
     Public Sub cargarGrilla()
         Dim clienteService As New ClienteService
         'limpio la grilla'
-        dgv_listaClientes.Rows.Clear()
-        For Each cli In clienteService.listarClientes()
-            With cli
-                'añado una fila por cada cliente, con su id nombre apellido direccion y zona'
-                dgv_listaClientes.Rows.Add(New String() { .idCliente.ToString, .nombre, .apellido, .direccion, .barrio.nombre, .telefono})
-            End With
-        Next
+        dgv_listaClientes.AutoGenerateColumns = False
+        dgv_listaClientes.DataSource = ""
+        dgv_listaClientes.DataSource = clienteService.listarClientes
+        dgv_listaClientes.Columns.Item(0).DataPropertyName = "idCliente"
+        dgv_listaClientes.Columns.Item(1).DataPropertyName = "nombre"
+        dgv_listaClientes.Columns.Item(2).DataPropertyName = "apellido"
+        dgv_listaClientes.Columns.Item(3).DataPropertyName = "direccion"
+        dgv_listaClientes.Columns.Item(4).DataPropertyName = "barrio"
+        dgv_listaClientes.Columns.Item(5).DataPropertyName = "telefono"
+        dgv_listaClientes.Columns.Item(6).DataPropertyName = "mail"
+        dgv_listaClientes.Columns.Item(7).DataPropertyName = "dni"
+        dgv_listaClientes.Columns.Item(8).DataPropertyName = "descripcion"
+
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
@@ -44,15 +50,9 @@
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
-        'creo un cliente nuevo y lleno los atributos con los valores de las celdas de la grilla'
-        Dim cl As Cliente = New Cliente
-        cl.idCliente = Integer.Parse(dgv_listaClientes.CurrentRow.Cells.Item("col_id").Value)
-        cl.nombre = dgv_listaClientes.CurrentRow.Cells.Item("col_nomCliente").Value
-        cl.apellido = dgv_listaClientes.CurrentRow.Cells.Item("col_apellido").Value
-        cl.direccion = dgv_listaClientes.CurrentRow.Cells.Item("col_direccion").Value
-        cl.barrio = New Barrio
-        cl.barrio.ID_BARRIO = dgv_listaClientes.CurrentRow.Cells.Item("col_barrio").Value
-        cl.telefono = Integer.Parse(dgv_listaClientes.CurrentRow.Cells.Item("col_telefono").Value)
+
+        Dim cl As Cliente = dgv_listaClientes.CurrentRow.DataBoundItem
+
         Dim addcli As frm_addClientes = New frm_addClientes
 
         'seteo el modoeditar de frmaddclientes'
@@ -64,7 +64,4 @@
         End If
     End Sub
 
-    Private Sub dgv_listaClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listaClientes.CellContentClick
-
-    End Sub
 End Class

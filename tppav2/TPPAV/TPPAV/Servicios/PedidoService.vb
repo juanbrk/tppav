@@ -8,6 +8,14 @@
         Return pedidao.getAll()
     End Function
 
+    Public Function listarPedidosNoTerminados() As List(Of Pedido)
+        Return pedidao.getAllNoTerminados()
+    End Function
+
+    Public Function listarPedidosTerminados() As List(Of Pedido)
+        Return pedidao.getAllTerminados()
+    End Function
+
     Public Function listarPedidosEntreFechas(ByVal desde As String, ByVal hasta As String) As DataTable
         Return pedidao.getAllEntreFechas(desde, hasta)
     End Function
@@ -24,6 +32,9 @@
         Return pedidao.addPedido(ped)
     End Function
 
+    Public Function terminarPedido(id As Integer) As Integer
+        Return pedidao.terminarPedido(id)
+    End Function
     Public Function verDetalle(id As Integer) As List(Of DetallePedido)
         Return pedidao.verDetalles(id)
     End Function

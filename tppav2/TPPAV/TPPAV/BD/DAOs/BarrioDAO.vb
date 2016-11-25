@@ -12,6 +12,7 @@ Public Class BarrioDao
             With nuevoBarrio
                 .ID_BARRIO = Convert.ToInt32(row.Item("id_barrio").ToString)
                 .nombre = row.Item("nombre").ToString
+                .provincia = row.Item("provincia").ToString
             End With
             listaBarrios.Add(nuevoBarrio)
         Next
@@ -37,7 +38,7 @@ Public Class BarrioDao
     End Function
 
     Public Function addBarrio(ByVal barrioIngresado As Barrio) As Integer
-        Dim strsql As String = "INSERT INTO Barrio (nombre) VALUES ('" & barrioIngresado.nombre & "')"
+        Dim strsql As String = "INSERT INTO Barrio (nombre,provincia) VALUES ('" & barrioIngresado.nombre & "','" & barrioIngresado.provincia & "')"
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception
@@ -46,7 +47,7 @@ Public Class BarrioDao
     End Function
 
     Public Function updateBarrio(ByVal barrioAActualizar As Barrio) As Integer
-        Dim strsql As String = "UPDATE Barrio SET  nombre='" & barrioAActualizar.nombre & "' WHERE id_barrio=" & barrioAActualizar.ID_BARRIO
+        Dim strsql As String = "UPDATE Barrio SET  nombre='" & barrioAActualizar.nombre & "',provincia='" & barrioAActualizar.provincia & "' WHERE id_barrio=" & barrioAActualizar.ID_BARRIO
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception

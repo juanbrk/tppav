@@ -17,12 +17,13 @@
     End Sub
     Public Sub cargarGrilla()
         Dim barrioService As New BarrioService
-        dgv_listadoBarrios.Rows.Clear()
-        For Each barr In barrioService.listarBarrios()
-            With barr
-                dgv_listadoBarrios.Rows.Add(New String() {.ID_BARRIO.ToString, .nombre})
-            End With
-        Next
+        dgv_listadoBarrios.AutoGenerateColumns = False
+        dgv_listadoBarrios.DataSource = ""
+        dgv_listadoBarrios.DataSource = barrioService.listarBarrios
+        dgv_listadoBarrios.Columns.Item(0).DataPropertyName = "ID_BARRIO"
+        dgv_listadoBarrios.Columns.Item(1).DataPropertyName = "nombre"
+        dgv_listadoBarrios.Columns.Item(2).DataPropertyName = "provincia"
+
     End Sub
 
 

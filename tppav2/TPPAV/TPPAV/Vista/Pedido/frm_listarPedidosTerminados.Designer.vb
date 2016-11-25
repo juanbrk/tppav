@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_listarPedidos
+Partial Class frm_listarPedidosTerminados
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,12 +22,10 @@ Partial Class frm_listarPedidos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.dgv_detalles = New System.Windows.Forms.DataGridView()
-        Me.col_id_det = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_art = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
+        Me.lbl_id = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_pedidos = New System.Windows.Forms.DataGridView()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nom_cli = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,173 +38,180 @@ Partial Class frm_listarPedidos
         Me.col_extra1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_extra2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_usu = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lbl_id = New System.Windows.Forms.Label()
-        Me.btn_cerrar = New System.Windows.Forms.Button()
-        Me.btn_terminado = New System.Windows.Forms.Button()
-        CType(Me.dgv_detalles, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.dgv_detalles = New System.Windows.Forms.DataGridView()
+        Me.col_id_det = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_art = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_detalles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'dgv_detalles
+        'btn_cerrar
         '
-        Me.dgv_detalles.BackgroundColor = System.Drawing.SystemColors.Window
-        Me.dgv_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_detalles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id_det, Me.col_precio, Me.col_cant, Me.col_art})
-        Me.dgv_detalles.Location = New System.Drawing.Point(422, 313)
-        Me.dgv_detalles.Name = "dgv_detalles"
-        Me.dgv_detalles.ReadOnly = True
-        Me.dgv_detalles.Size = New System.Drawing.Size(444, 176)
-        Me.dgv_detalles.TabIndex = 0
+        Me.btn_cerrar.Location = New System.Drawing.Point(495, 569)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(99, 23)
+        Me.btn_cerrar.TabIndex = 14
+        Me.btn_cerrar.Text = "Cerrar"
+        Me.btn_cerrar.UseVisualStyleBackColor = True
         '
-        'col_id_det
+        'lbl_id
         '
-        Me.col_id_det.HeaderText = "Detalle ID"
-        Me.col_id_det.Name = "col_id_det"
+        Me.lbl_id.AutoSize = True
+        Me.lbl_id.Location = New System.Drawing.Point(348, 497)
+        Me.lbl_id.Name = "lbl_id"
+        Me.lbl_id.Size = New System.Drawing.Size(15, 13)
+        Me.lbl_id.TabIndex = 13
+        Me.lbl_id.Text = "id"
         '
-        'col_precio
+        'Label2
         '
-        Me.col_precio.HeaderText = "Precio Uni."
-        Me.col_precio.Name = "col_precio"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(120, 497)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(123, 13)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "ID Pedido seleccionado:"
         '
-        'col_cant
+        'Label1
         '
-        Me.col_cant.HeaderText = "Cantidad"
-        Me.col_cant.Name = "col_cant"
-        '
-        'col_art
-        '
-        Me.col_art.HeaderText = "Articulo"
-        Me.col_art.Name = "col_art"
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.Location = New System.Drawing.Point(518, 255)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(99, 23)
-        Me.btn_buscar.TabIndex = 1
-        Me.btn_buscar.Text = "Buscar detalle"
-        Me.btn_buscar.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(46, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(99, 13)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Pedidos terminados"
         '
         'dgv_pedidos
         '
         Me.dgv_pedidos.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgv_pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_pedidos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_nom_cli, Me.col_fecha_ped, Me.col_fecha_ent, Me.col_total, Me.col_nro, Me.col_efec, Me.col_descuento, Me.col_extra1, Me.col_extra2, Me.col_usu})
-        Me.dgv_pedidos.Location = New System.Drawing.Point(60, 72)
+        Me.dgv_pedidos.Location = New System.Drawing.Point(46, 81)
         Me.dgv_pedidos.Name = "dgv_pedidos"
         Me.dgv_pedidos.ReadOnly = True
         Me.dgv_pedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_pedidos.Size = New System.Drawing.Size(1143, 150)
-        Me.dgv_pedidos.TabIndex = 2
+        Me.dgv_pedidos.Size = New System.Drawing.Size(1143, 309)
+        Me.dgv_pedidos.TabIndex = 10
         '
         'col_id
         '
         Me.col_id.HeaderText = "Pedido ID"
         Me.col_id.Name = "col_id"
+        Me.col_id.ReadOnly = True
         '
         'col_nom_cli
         '
         Me.col_nom_cli.HeaderText = "Cliente"
         Me.col_nom_cli.Name = "col_nom_cli"
+        Me.col_nom_cli.ReadOnly = True
         '
         'col_fecha_ped
         '
         Me.col_fecha_ped.HeaderText = "Fecha Pedido"
         Me.col_fecha_ped.Name = "col_fecha_ped"
+        Me.col_fecha_ped.ReadOnly = True
         '
         'col_fecha_ent
         '
         Me.col_fecha_ent.HeaderText = "Fecha Entrega"
         Me.col_fecha_ent.Name = "col_fecha_ent"
+        Me.col_fecha_ent.ReadOnly = True
         '
         'col_total
         '
         Me.col_total.HeaderText = "Total"
         Me.col_total.Name = "col_total"
+        Me.col_total.ReadOnly = True
         '
         'col_nro
         '
         Me.col_nro.HeaderText = "Num Fac"
         Me.col_nro.Name = "col_nro"
+        Me.col_nro.ReadOnly = True
         '
         'col_efec
         '
         Me.col_efec.HeaderText = "Efectivo"
         Me.col_efec.Name = "col_efec"
+        Me.col_efec.ReadOnly = True
         '
         'col_descuento
         '
         Me.col_descuento.HeaderText = "Descuento"
         Me.col_descuento.Name = "col_descuento"
+        Me.col_descuento.ReadOnly = True
         '
         'col_extra1
         '
         Me.col_extra1.HeaderText = "Extra1"
         Me.col_extra1.Name = "col_extra1"
+        Me.col_extra1.ReadOnly = True
         '
         'col_extra2
         '
         Me.col_extra2.HeaderText = "Extra2"
         Me.col_extra2.Name = "col_extra2"
+        Me.col_extra2.ReadOnly = True
         '
         'col_usu
         '
         Me.col_usu.HeaderText = "Creador"
         Me.col_usu.Name = "col_usu"
+        Me.col_usu.ReadOnly = True
         '
-        'Label1
+        'btn_buscar
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(60, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(114, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Pedidos no terminados"
+        Me.btn_buscar.Location = New System.Drawing.Point(495, 492)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(99, 23)
+        Me.btn_buscar.TabIndex = 9
+        Me.btn_buscar.Text = "Buscar detalle"
+        Me.btn_buscar.UseVisualStyleBackColor = True
         '
-        'Label2
+        'dgv_detalles
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(143, 260)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(123, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "ID Pedido seleccionado:"
+        Me.dgv_detalles.BackgroundColor = System.Drawing.SystemColors.Window
+        Me.dgv_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_detalles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id_det, Me.col_precio, Me.col_cant, Me.col_art})
+        Me.dgv_detalles.Location = New System.Drawing.Point(672, 416)
+        Me.dgv_detalles.Name = "dgv_detalles"
+        Me.dgv_detalles.ReadOnly = True
+        Me.dgv_detalles.Size = New System.Drawing.Size(476, 176)
+        Me.dgv_detalles.TabIndex = 8
         '
-        'lbl_id
+        'col_id_det
         '
-        Me.lbl_id.AutoSize = True
-        Me.lbl_id.Location = New System.Drawing.Point(371, 260)
-        Me.lbl_id.Name = "lbl_id"
-        Me.lbl_id.Size = New System.Drawing.Size(15, 13)
-        Me.lbl_id.TabIndex = 5
-        Me.lbl_id.Text = "id"
+        Me.col_id_det.HeaderText = "Detalle ID"
+        Me.col_id_det.Name = "col_id_det"
+        Me.col_id_det.ReadOnly = True
         '
-        'btn_cerrar
+        'col_precio
         '
-        Me.btn_cerrar.Location = New System.Drawing.Point(613, 518)
-        Me.btn_cerrar.Name = "btn_cerrar"
-        Me.btn_cerrar.Size = New System.Drawing.Size(75, 23)
-        Me.btn_cerrar.TabIndex = 6
-        Me.btn_cerrar.Text = "Cerrar"
-        Me.btn_cerrar.UseVisualStyleBackColor = True
+        Me.col_precio.HeaderText = "Precio Uni."
+        Me.col_precio.Name = "col_precio"
+        Me.col_precio.ReadOnly = True
         '
-        'btn_terminado
+        'col_cant
         '
-        Me.btn_terminado.Location = New System.Drawing.Point(725, 255)
-        Me.btn_terminado.Name = "btn_terminado"
-        Me.btn_terminado.Size = New System.Drawing.Size(170, 23)
-        Me.btn_terminado.TabIndex = 7
-        Me.btn_terminado.Text = "Marcar pedido como terminado"
-        Me.btn_terminado.UseVisualStyleBackColor = True
+        Me.col_cant.HeaderText = "Cantidad"
+        Me.col_cant.Name = "col_cant"
+        Me.col_cant.ReadOnly = True
         '
-        'frm_listarPedidos
+        'col_art
+        '
+        Me.col_art.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.col_art.HeaderText = "Articulo"
+        Me.col_art.Name = "col_art"
+        Me.col_art.ReadOnly = True
+        '
+        'frm_listarPedidosTerminados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1261, 561)
-        Me.Controls.Add(Me.btn_terminado)
+        Me.ClientSize = New System.Drawing.Size(1234, 632)
         Me.Controls.Add(Me.btn_cerrar)
         Me.Controls.Add(Me.lbl_id)
         Me.Controls.Add(Me.Label2)
@@ -214,23 +219,20 @@ Partial Class frm_listarPedidos
         Me.Controls.Add(Me.dgv_pedidos)
         Me.Controls.Add(Me.btn_buscar)
         Me.Controls.Add(Me.dgv_detalles)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.Name = "frm_listarPedidos"
-        Me.Text = "Listado de Pedidos"
-        CType(Me.dgv_detalles, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "frm_listarPedidosTerminados"
+        Me.Text = "Listado de Pedidos Terminados"
         CType(Me.dgv_pedidos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_detalles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents dgv_detalles As DataGridView
-    Friend WithEvents btn_buscar As Button
-    Friend WithEvents dgv_pedidos As DataGridView
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents lbl_id As Label
     Friend WithEvents btn_cerrar As Button
+    Friend WithEvents lbl_id As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dgv_pedidos As DataGridView
     Friend WithEvents col_id As DataGridViewTextBoxColumn
     Friend WithEvents col_nom_cli As DataGridViewTextBoxColumn
     Friend WithEvents col_fecha_ped As DataGridViewTextBoxColumn
@@ -242,9 +244,10 @@ Partial Class frm_listarPedidos
     Friend WithEvents col_extra1 As DataGridViewTextBoxColumn
     Friend WithEvents col_extra2 As DataGridViewTextBoxColumn
     Friend WithEvents col_usu As DataGridViewTextBoxColumn
+    Friend WithEvents btn_buscar As Button
+    Friend WithEvents dgv_detalles As DataGridView
     Friend WithEvents col_id_det As DataGridViewTextBoxColumn
     Friend WithEvents col_precio As DataGridViewTextBoxColumn
     Friend WithEvents col_cant As DataGridViewTextBoxColumn
     Friend WithEvents col_art As DataGridViewTextBoxColumn
-    Friend WithEvents btn_terminado As Button
 End Class

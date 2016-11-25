@@ -91,6 +91,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modelo\Usuario.vb" />
     <Compile Include="Vista\Barrio\frm_addBarrio.Designer.vb">
       <DependentUpon>frm_addBarrio.vb</DependentUpon>
     </Compile>
@@ -113,6 +114,12 @@
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Pedido\frm_addDetalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Pedido\frm_listarPedidosTerminados.Designer.vb">
+      <DependentUpon>frm_listarPedidosTerminados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Pedido\frm_listarPedidosTerminados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Proveedor\frm_addProovedor.Designer.vb">
@@ -228,6 +235,9 @@
     <EmbeddedResource Include="Vista\Estadisticas\Report2.rdlc" />
     <EmbeddedResource Include="Vista\Pedido\frm_addDetalle.resx">
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Pedido\frm_listarPedidosTerminados.resx">
+      <DependentUpon>frm_listarPedidosTerminados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Proveedor\frm_addProovedor.resx">
       <DependentUpon>frm_addProovedor.vb</DependentUpon>

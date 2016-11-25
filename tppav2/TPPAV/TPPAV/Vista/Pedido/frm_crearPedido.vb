@@ -4,7 +4,11 @@
         Me.cargarClientes()
         dgv_detalles.AutoGenerateColumns = False
         txt_total.Text = ""
+        lbl_neto.Text = ""
         dtp_entrega.MinDate = DateTime.Today
+        Dim usuario As Usuario = Me.Tag
+        lbl_usuario.Text = usuario.nombre
+        lbl_prendas.Text = "0"
     End Sub
 
     Public Sub cargarClientes()
@@ -27,6 +31,14 @@
 
     End Sub
 
+    Private Function contarPrendas() As Integer
+        Dim cant As Integer = 0
+        For Each detalle As DetallePedido In detalles
+            cant += detalle.cantidad
+        Next
+        Return cant
+    End Function
+
     Private Sub btn_detalle_Click(sender As Object, e As EventArgs) Handles btn_detalle.Click
         Dim add As frm_addDetalle = New frm_addDetalle
         Dim res As DialogResult = add.ShowDialog()
@@ -46,18 +58,55 @@
         dgv_detalles.Columns.Item(0).DataPropertyName = "articulo"
         dgv_detalles.Columns.Item(1).DataPropertyName = "cantidad"
         dgv_detalles.Columns.Item(2).DataPropertyName = "precioU"
-        dgv_detalles.Columns.Item(3).DataPropertyName = "descuento"
 
-        txt_total.Text = "$ " & calcularTotal()
+        Dim total As Double = calcularTotal()
+        txt_total.Text = "$ " & total.ToString
+        actualizarNeto(total)
+        lbl_prendas.Text = contarPrendas.ToString
     End Sub
 
-    Private Function calcularTotal() As Integer
+    Private Function calcularTotal() As Double
         Dim total As Double = 0
         For Each det As DetallePedido In detalles
-            total += (det.cantidad * det.precioU) - det.descuento
+            total += det.cantidad * det.precioU
         Next
         Return total
     End Function
+
+    Public Sub actualizarNeto(ByVal total As Double)
+        Dim desc As Double = 0
+        Dim extra1 As Double = 0
+        Dim extra2 As Double = 0
+        If Not txt_extra1.Text Is String.Empty Then
+            Try
+                extra1 = Double.Parse(txt_extra1.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+        If Not txt_descuento.Text Is String.Empty Then
+            Try
+                desc = Double.Parse(txt_descuento.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+        If Not txt_extra2.Text Is String.Empty Then
+            Try
+                extra2 = Double.Parse(txt_extra2.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+
+
+
+        lbl_neto.Text = "$ " & (total - desc + extra1 + extra2).ToString
+
+
+
+    End Sub
+
 
     Private Sub btn_reg_pedido_Click(sender As Object, e As EventArgs) Handles btn_reg_pedido.Click
 
@@ -81,12 +130,43 @@
             End Try
         End If
 
+        If txt_extra1.Text Is String.Empty Then
+            pedido.extra1 = 0
+        Else
+            Try
+                pedido.extra1 = Double.Parse(txt_extra1.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+
+        If txt_extra2.Text Is String.Empty Then
+            pedido.extra2 = 0
+        Else
+            Try
+                pedido.extra2 = Double.Parse(txt_extra2.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+
+        If txt_descuento.Text Is String.Empty Then
+            pedido.descuento = 0
+        Else
+            Try
+                pedido.descuento = Double.Parse(txt_descuento.Text)
+            Catch ex As Exception
+
+            End Try
+        End If
+        pedido.efectivo = cb_efectivo.Checked
         pedido.detalles = detalles
         pedido.total = calcularTotal()
+        pedido.usuario = Me.Tag
 
         Dim pedidoservice As PedidoService = New PedidoService
         If pedidoservice.agregarPedido(pedido) = 1 Then
-            MsgBox("Se ha registrado el pedido!")
+            MsgBox("Se ha registrado el pedido!", MsgBoxStyle.Information, "Base de Datos")
             Me.Close()
         Else
             MsgBox("Hubo un error al registrar el pedido")
@@ -95,5 +175,15 @@
 
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         Me.Close()
+    End Sub
+
+    Private Sub txt_descuento_TextChanged(sender As Object, e As EventArgs) Handles txt_descuento.TextChanged
+        actualizarNeto(calcularTotal)
+    End Sub
+    Private Sub txt_extra1_TextChanged(sender As Object, e As EventArgs) Handles txt_extra1.TextChanged
+        actualizarNeto(calcularTotal)
+    End Sub
+    Private Sub txt_extra2_TextChanged(sender As Object, e As EventArgs) Handles txt_extra2.TextChanged
+        actualizarNeto(calcularTotal)
     End Sub
 End Class

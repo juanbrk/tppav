@@ -30,7 +30,20 @@ Public Class frm_addBarrio
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         Dim barService As BarrioService = New BarrioService()
         cerrar = True
-        barrio.nombre = txt_nomBarrio.Text
+        If Not txt_nomBarrio.Text Is String.Empty Then
+            barrio.nombre = txt_nomBarrio.Text
+        Else
+            MsgBox("Debe ingresar un nombre del barrio", MsgBoxStyle.Exclamation, "Gestor de barrios")
+            Return
+        End If
+
+        If Not txt_provincia.Text Is String.Empty Then
+            barrio.provincia = txt_provincia.Text
+        Else
+            MsgBox("Debe ingresar el nombre de la provincia", MsgBoxStyle.Exclamation, "Gestor de barrios")
+            Return
+        End If
+
 
         If bandera Then
 

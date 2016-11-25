@@ -1,7 +1,5 @@
-﻿Public Class frm_listarPedidos
-    Private Sub frm_listarPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
+﻿Public Class frm_listarPedidosTerminados
+    Private Sub frm_listarPedidosTerminados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarPedidos()
         lbl_id.Text = ""
         btn_buscar.Enabled = False
@@ -10,7 +8,7 @@
         Dim pedidos As PedidoService = New PedidoService
         dgv_pedidos.AutoGenerateColumns = False
         dgv_pedidos.DataSource = ""
-        dgv_pedidos.DataSource = pedidos.listarPedidosNoTerminados
+        dgv_pedidos.DataSource = pedidos.listarPedidosTerminados
         dgv_pedidos.Columns.Item(0).DataPropertyName = "id_pedido"
         dgv_pedidos.Columns.Item(1).DataPropertyName = "cliente"
         dgv_pedidos.Columns.Item(2).DataPropertyName = "fecha_pedido"
@@ -50,14 +48,4 @@
         Me.Close()
     End Sub
 
-    Private Sub btn_terminado_Click(sender As Object, e As EventArgs) Handles btn_terminado.Click
-        Dim ped As Pedido = dgv_pedidos.CurrentRow.DataBoundItem
-        Dim service As New PedidoService
-        If service.terminarPedido(ped.id_pedido) = 1 Then
-            MsgBox("Pedido terminado!", MsgBoxStyle.Information, "Base de Datos")
-        Else
-            MsgBox("Hubo un error en la Base de Datos o no se pudo terminar el pedido", MsgBoxStyle.Exclamation, "Base de Datos")
-        End If
-        cargarPedidos()
-    End Sub
 End Class
