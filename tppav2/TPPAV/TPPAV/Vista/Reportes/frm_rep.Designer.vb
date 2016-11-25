@@ -126,9 +126,9 @@ Partial Class frm_rep
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 18)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(173, 13)
+        Me.Label2.Size = New System.Drawing.Size(102, 13)
         Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Buscar Pedidos No terminados por:"
+        Me.Label2.Text = "Buscar Pedidos por:"
         '
         'btn_clientes
         '
