@@ -25,7 +25,6 @@ Partial Class frm_addDetalle
         Me.cbo_articulos = New System.Windows.Forms.ComboBox()
         Me.txt_cantidad = New System.Windows.Forms.TextBox()
         Me.txt_precio = New System.Windows.Forms.TextBox()
-        Me.txt_descuento = New System.Windows.Forms.TextBox()
         Me.cbo_categorias = New System.Windows.Forms.ComboBox()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
@@ -33,7 +32,6 @@ Partial Class frm_addDetalle
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cbo_articulos
@@ -58,13 +56,6 @@ Partial Class frm_addDetalle
         Me.txt_precio.Size = New System.Drawing.Size(100, 20)
         Me.txt_precio.TabIndex = 2
         '
-        'txt_descuento
-        '
-        Me.txt_descuento.Location = New System.Drawing.Point(197, 307)
-        Me.txt_descuento.Name = "txt_descuento"
-        Me.txt_descuento.Size = New System.Drawing.Size(100, 20)
-        Me.txt_descuento.TabIndex = 3
-        '
         'cbo_categorias
         '
         Me.cbo_categorias.FormattingEnabled = True
@@ -76,7 +67,7 @@ Partial Class frm_addDetalle
         'btn_aceptar
         '
         Me.btn_aceptar.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.btn_aceptar.Location = New System.Drawing.Point(243, 371)
+        Me.btn_aceptar.Location = New System.Drawing.Point(245, 299)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(75, 23)
         Me.btn_aceptar.TabIndex = 5
@@ -86,7 +77,7 @@ Partial Class frm_addDetalle
         'btn_cancelar
         '
         Me.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_cancelar.Location = New System.Drawing.Point(143, 370)
+        Me.btn_cancelar.Location = New System.Drawing.Point(145, 298)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_cancelar.TabIndex = 6
@@ -129,21 +120,11 @@ Partial Class frm_addDetalle
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Cantidad"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 307)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(59, 13)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Descuento"
-        '
         'frm_addDetalle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(357, 414)
-        Me.Controls.Add(Me.Label5)
+        Me.ClientSize = New System.Drawing.Size(357, 351)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -151,7 +132,6 @@ Partial Class frm_addDetalle
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
         Me.Controls.Add(Me.cbo_categorias)
-        Me.Controls.Add(Me.txt_descuento)
         Me.Controls.Add(Me.txt_precio)
         Me.Controls.Add(Me.txt_cantidad)
         Me.Controls.Add(Me.cbo_articulos)
@@ -165,7 +145,6 @@ Partial Class frm_addDetalle
     Friend WithEvents cbo_articulos As ComboBox
     Friend WithEvents txt_cantidad As TextBox
     Friend WithEvents txt_precio As TextBox
-    Friend WithEvents txt_descuento As TextBox
     Friend WithEvents cbo_categorias As ComboBox
     Friend WithEvents btn_aceptar As Button
     Friend WithEvents btn_cancelar As Button
@@ -173,5 +152,4 @@ Partial Class frm_addDetalle
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
 End Class

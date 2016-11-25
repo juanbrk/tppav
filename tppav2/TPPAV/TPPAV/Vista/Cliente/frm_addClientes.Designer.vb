@@ -32,10 +32,15 @@ Partial Class frm_addClientes
         Me.txt_direccion = New System.Windows.Forms.TextBox()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.btn_add = New System.Windows.Forms.Button()
-        Me.btn_clear = New System.Windows.Forms.Button()
         Me.btn_addBarrio = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.cbo_barrios = New System.Windows.Forms.ComboBox()
+        Me.txt_dni = New System.Windows.Forms.TextBox()
+        Me.txt_mail = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cb_descripcion = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_nombre
@@ -71,7 +76,7 @@ Partial Class frm_addClientes
         'lbl_barrio
         '
         Me.lbl_barrio.AutoSize = True
-        Me.lbl_barrio.Location = New System.Drawing.Point(256, 116)
+        Me.lbl_barrio.Location = New System.Drawing.Point(256, 22)
         Me.lbl_barrio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_barrio.Name = "lbl_barrio"
         Me.lbl_barrio.Size = New System.Drawing.Size(34, 13)
@@ -93,15 +98,15 @@ Partial Class frm_addClientes
         Me.txt_nombre.Location = New System.Drawing.Point(10, 36)
         Me.txt_nombre.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(202, 20)
+        Me.txt_nombre.Size = New System.Drawing.Size(168, 20)
         Me.txt_nombre.TabIndex = 5
         '
         'txt_apellido
         '
-        Me.txt_apellido.Location = New System.Drawing.Point(10, 81)
+        Me.txt_apellido.Location = New System.Drawing.Point(10, 79)
         Me.txt_apellido.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(202, 20)
+        Me.txt_apellido.Size = New System.Drawing.Size(168, 20)
         Me.txt_apellido.TabIndex = 6
         '
         'txt_direccion
@@ -109,7 +114,7 @@ Partial Class frm_addClientes
         Me.txt_direccion.Location = New System.Drawing.Point(10, 133)
         Me.txt_direccion.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(202, 20)
+        Me.txt_direccion.Size = New System.Drawing.Size(168, 20)
         Me.txt_direccion.TabIndex = 7
         '
         'txt_telefono
@@ -117,33 +122,23 @@ Partial Class frm_addClientes
         Me.txt_telefono.Location = New System.Drawing.Point(10, 184)
         Me.txt_telefono.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(150, 20)
+        Me.txt_telefono.Size = New System.Drawing.Size(168, 20)
         Me.txt_telefono.TabIndex = 9
         '
         'btn_add
         '
         Me.btn_add.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.btn_add.Location = New System.Drawing.Point(315, 256)
+        Me.btn_add.Location = New System.Drawing.Point(293, 242)
         Me.btn_add.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(65, 28)
+        Me.btn_add.Size = New System.Drawing.Size(75, 28)
         Me.btn_add.TabIndex = 10
         Me.btn_add.Text = "Aceptar"
         Me.btn_add.UseVisualStyleBackColor = True
         '
-        'btn_clear
-        '
-        Me.btn_clear.Location = New System.Drawing.Point(128, 256)
-        Me.btn_clear.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_clear.Name = "btn_clear"
-        Me.btn_clear.Size = New System.Drawing.Size(101, 28)
-        Me.btn_clear.TabIndex = 11
-        Me.btn_clear.Text = "Limpiar campos"
-        Me.btn_clear.UseVisualStyleBackColor = True
-        '
         'btn_addBarrio
         '
-        Me.btn_addBarrio.Location = New System.Drawing.Point(259, 156)
+        Me.btn_addBarrio.Location = New System.Drawing.Point(259, 62)
         Me.btn_addBarrio.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_addBarrio.Name = "btn_addBarrio"
         Me.btn_addBarrio.Size = New System.Drawing.Size(78, 26)
@@ -154,7 +149,7 @@ Partial Class frm_addClientes
         'btn_cancel
         '
         Me.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_cancel.Location = New System.Drawing.Point(233, 256)
+        Me.btn_cancel.Location = New System.Drawing.Point(201, 242)
         Me.btn_cancel.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(76, 28)
@@ -165,20 +160,79 @@ Partial Class frm_addClientes
         'cbo_barrios
         '
         Me.cbo_barrios.FormattingEnabled = True
-        Me.cbo_barrios.Location = New System.Drawing.Point(259, 130)
+        Me.cbo_barrios.Location = New System.Drawing.Point(259, 36)
         Me.cbo_barrios.Name = "cbo_barrios"
         Me.cbo_barrios.Size = New System.Drawing.Size(121, 21)
         Me.cbo_barrios.TabIndex = 14
+        '
+        'txt_dni
+        '
+        Me.txt_dni.Location = New System.Drawing.Point(212, 184)
+        Me.txt_dni.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_dni.Name = "txt_dni"
+        Me.txt_dni.Size = New System.Drawing.Size(168, 20)
+        Me.txt_dni.TabIndex = 18
+        '
+        'txt_mail
+        '
+        Me.txt_mail.Location = New System.Drawing.Point(212, 133)
+        Me.txt_mail.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_mail.Name = "txt_mail"
+        Me.txt_mail.Size = New System.Drawing.Size(168, 20)
+        Me.txt_mail.TabIndex = 17
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(214, 167)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(63, 13)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "DNI o CUIT"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(215, 116)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(26, 13)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Mail"
+        '
+        'cb_descripcion
+        '
+        Me.cb_descripcion.FormattingEnabled = True
+        Me.cb_descripcion.Location = New System.Drawing.Point(13, 242)
+        Me.cb_descripcion.Name = "cb_descripcion"
+        Me.cb_descripcion.Size = New System.Drawing.Size(143, 21)
+        Me.cb_descripcion.TabIndex = 19
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 226)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 13)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Descripcion"
         '
         'frm_addClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(395, 295)
+        Me.ClientSize = New System.Drawing.Size(394, 303)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cb_descripcion)
+        Me.Controls.Add(Me.txt_dni)
+        Me.Controls.Add(Me.txt_mail)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cbo_barrios)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_addBarrio)
-        Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_telefono)
         Me.Controls.Add(Me.txt_direccion)
@@ -206,8 +260,13 @@ Partial Class frm_addClientes
     Friend WithEvents txt_direccion As System.Windows.Forms.TextBox
     Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
     Friend WithEvents btn_add As System.Windows.Forms.Button
-    Friend WithEvents btn_clear As System.Windows.Forms.Button
     Friend WithEvents btn_addBarrio As System.Windows.Forms.Button
     Friend WithEvents btn_cancel As System.Windows.Forms.Button
     Friend WithEvents cbo_barrios As ComboBox
+    Friend WithEvents txt_dni As TextBox
+    Friend WithEvents txt_mail As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents cb_descripcion As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

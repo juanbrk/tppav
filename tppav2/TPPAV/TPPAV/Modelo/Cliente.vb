@@ -5,7 +5,9 @@
     Public Property direccion As String
     Public Property barrio As Barrio
     Public Property telefono As String
-
+    Public Property mail As String
+    Public Property dni As String
+    Public Property descripcion As String
     'Override al toString para poder llamarlo desde el dataGridView
     Public Overrides Function toString() As String
         Return nombre

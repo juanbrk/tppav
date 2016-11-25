@@ -1,6 +1,8 @@
 ﻿Public Class frm_principal
+    Dim usuario As New Usuario
     Private Sub AñadirNuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AñadirNuevoToolStripMenuItem.Click
         Dim add As frm_crearPedido = New frm_crearPedido
+        add.Tag = usuario
         add.ShowDialog()
     End Sub
 
@@ -66,7 +68,8 @@
         Dim logueo As New frm_usrLogin
         logueo.ShowDialog()
         If logueo.getValidado Then
-            Label2.Text = logueo.getUsuario
+            usuario = logueo.getUsuario
+            Label2.Text = usuario.nombre
         Else
             Me.Close()
         End If
@@ -80,5 +83,10 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim est As New frm_estadisticas
         est.ShowDialog()
+    End Sub
+
+    Private Sub ListarTerminadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarTerminadosToolStripMenuItem.Click
+        Dim listar As frm_listarPedidosTerminados = New frm_listarPedidosTerminados
+        listar.ShowDialog()
     End Sub
 End Class

@@ -2,6 +2,7 @@
 
 Public Class frm_addDetalle
     Dim banderaCategoria As Boolean = False
+    Dim banderaArt As Boolean = False
     Dim detalle As New DetallePedido
     Dim cerrar As Boolean = False
     Private Sub frm_addDetalle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -25,6 +26,8 @@ Public Class frm_addDetalle
             cbo_articulos.DisplayMember = "nombre"
             cbo_articulos.ValueMember = "idArticulo"
             cbo_articulos.SelectedIndex = -1
+            banderaArt = True
+            txt_precio.Text = ""
         End If
     End Sub
 
@@ -63,10 +66,6 @@ Public Class frm_addDetalle
             End Try
         End If
 
-        detalle.descuento = 0.0
-        If Not txt_descuento.Text = String.Empty Then
-            detalle.descuento = Convert.ToDouble(txt_descuento.Text)
-        End If
 
         If cbo_articulos.SelectedIndex = -1 Then
             MsgBox("Debe seleccionar un artículo", MsgBoxStyle.Information)
@@ -87,5 +86,15 @@ Public Class frm_addDetalle
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         cerrar = False
         Me.Close()
+    End Sub
+
+    Private Sub cbo_articulos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_articulos.SelectedIndexChanged
+        If banderaArt Then
+            Dim art As Articulo = cbo_articulos.SelectedItem
+            If Not art Is Nothing Then
+                txt_precio.Text = art.precioU.ToString
+            End If
+
+        End If
     End Sub
 End Class

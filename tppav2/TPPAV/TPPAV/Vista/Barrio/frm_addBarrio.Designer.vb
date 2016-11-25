@@ -26,12 +26,14 @@ Partial Class frm_addBarrio
         Me.txt_nomBarrio = New System.Windows.Forms.TextBox()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
+        Me.txt_provincia = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_nomBarrio
         '
         Me.lbl_nomBarrio.AutoSize = True
-        Me.lbl_nomBarrio.Location = New System.Drawing.Point(10, 11)
+        Me.lbl_nomBarrio.Location = New System.Drawing.Point(10, 16)
         Me.lbl_nomBarrio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_nomBarrio.Name = "lbl_nomBarrio"
         Me.lbl_nomBarrio.Size = New System.Drawing.Size(90, 13)
@@ -40,16 +42,16 @@ Partial Class frm_addBarrio
         '
         'txt_nomBarrio
         '
-        Me.txt_nomBarrio.Location = New System.Drawing.Point(106, 11)
+        Me.txt_nomBarrio.Location = New System.Drawing.Point(159, 16)
         Me.txt_nomBarrio.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_nomBarrio.Name = "txt_nomBarrio"
-        Me.txt_nomBarrio.Size = New System.Drawing.Size(180, 20)
+        Me.txt_nomBarrio.Size = New System.Drawing.Size(168, 20)
         Me.txt_nomBarrio.TabIndex = 1
         '
         'btn_add
         '
         Me.btn_add.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.btn_add.Location = New System.Drawing.Point(230, 43)
+        Me.btn_add.Location = New System.Drawing.Point(269, 95)
         Me.btn_add.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(56, 25)
@@ -60,7 +62,7 @@ Partial Class frm_addBarrio
         'btn_salir
         '
         Me.btn_salir.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btn_salir.Location = New System.Drawing.Point(164, 43)
+        Me.btn_salir.Location = New System.Drawing.Point(203, 95)
         Me.btn_salir.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(59, 25)
@@ -68,11 +70,31 @@ Partial Class frm_addBarrio
         Me.btn_salir.Text = "Cancelar"
         Me.btn_salir.UseVisualStyleBackColor = True
         '
+        'txt_provincia
+        '
+        Me.txt_provincia.Location = New System.Drawing.Point(159, 57)
+        Me.txt_provincia.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_provincia.Name = "txt_provincia"
+        Me.txt_provincia.Size = New System.Drawing.Size(167, 20)
+        Me.txt_provincia.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 57)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(116, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Nombre de la provincia"
+        '
         'frm_addBarrio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(295, 76)
+        Me.ClientSize = New System.Drawing.Size(347, 131)
+        Me.Controls.Add(Me.txt_provincia)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.txt_nomBarrio)
@@ -88,4 +110,6 @@ Partial Class frm_addBarrio
     Friend WithEvents txt_nomBarrio As System.Windows.Forms.TextBox
     Friend WithEvents btn_add As System.Windows.Forms.Button
     Friend WithEvents btn_salir As System.Windows.Forms.Button
+    Friend WithEvents txt_provincia As TextBox
+    Friend WithEvents Label1 As Label
 End Class

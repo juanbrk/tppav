@@ -20,9 +20,24 @@ Public Class ClienteDAO
                 .barrio.nombre = row.Item("nombar").ToString
                 '.zona = row.Item("Zona").ToString cambiar para conseguir el barrio
                 If Not TypeOf row.Item("Telefono") Is DBNull Then
-                    .telefono = Convert.ToInt32(row.Item("Telefono").ToString)
+                    .telefono = row.Item("Telefono").ToString
                 Else
-                    .telefono = 0
+                    .telefono = "Sin telefono"
+                End If
+                If Not TypeOf row.Item("DNI") Is DBNull Then
+                    .dni = row.Item("DNI").ToString
+                Else
+                    .dni = "Sin DNI/CUIT"
+                End If
+                If Not TypeOf row.Item("Descripcion") Is DBNull Then
+                    .descripcion = row.Item("Descripcion").ToString
+                Else
+                    .descripcion = "Sin descripcion"
+                End If
+                If Not TypeOf row.Item("Mail") Is DBNull Then
+                    .mail = row.Item("Mail").ToString
+                Else
+                    .mail = "Sin mail"
                 End If
             End With
             clientes.Add(cli)
@@ -49,8 +64,8 @@ Public Class ClienteDAO
     End Function
 
     Public Function addCliente(ByVal cli As Cliente) As Integer
-        Dim strsql As String = "INSERT INTO Clientes (Nombre,Apellido,Direccion,Telefono,barrio_id) VALUES ('" & cli.nombre & "','" &
-            cli.apellido & "','" & cli.direccion & "', " & cli.telefono & ", " & cli.barrio.ID_BARRIO & ")"
+        Dim strsql As String = "INSERT INTO Clientes (Nombre,Apellido,Direccion,Telefono,barrio_id,Mail,DNI,Descripcion) VALUES ('" & cli.nombre & "','" &
+            cli.apellido & "','" & cli.direccion & "', " & cli.telefono & ", " & cli.barrio.ID_BARRIO & ",'" & cli.mail & "','" & cli.dni & "','" & cli.descripcion & "')"
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception
@@ -59,8 +74,8 @@ Public Class ClienteDAO
     End Function
 
     Public Function updateCliente(ByVal cli As Cliente) As Integer
-        Dim strsql As String = "UPDATE Clientes SET Nombre='" & cli.nombre & "', Apellido='" & cli.apellido & "', Direccion='" & cli.direccion & "', id_barrio=" &
-            cli.barrio.ID_BARRIO & ", Telefono=" & cli.telefono & " WHERE Cliente_id=" & cli.idCliente
+        Dim strsql As String = "UPDATE Clientes SET Nombre='" & cli.nombre & "', Apellido='" & cli.apellido & "', Direccion='" & cli.direccion & "', barrio_id=" &
+            cli.barrio.ID_BARRIO & ", Telefono=" & cli.telefono & ", Mail='" & cli.mail & "', DNI='" & cli.dni & "', Descripcion='" & cli.descripcion & "' WHERE Cliente_id=" & cli.idCliente
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception
