@@ -55,4 +55,15 @@ Public Class BarrioDao
         End Try
     End Function
 
+    Public Function ventasXBarrioXMes(ByVal mes As String, ByVal año As String) As DataTable
+        Dim tabla As DataTable
+        If mes <> 0 Then
+            tabla = BdHelper.getDBHelper.ConsultaSQL("SELECT p.Pedido_id, p.Total, b.nombre, b.provincia FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id JOIN Barrio b ON b.id_barrio=c.barrio_id WHERE YEAR(p.Fecha_entrega)='" + año + "' AND MONTH(p.Fecha_entrega)='" + mes + "'")
+        Else
+            tabla = BdHelper.getDBHelper.ConsultaSQL("SELECT p.Pedido_id, p.Total, b.nombre, b.provincia FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id JOIN Barrio b ON b.id_barrio=c.barrio_id")
+
+        End If
+        Return tabla
+    End Function
+
 End Class

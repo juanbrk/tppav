@@ -24,12 +24,10 @@ Partial Class frm_addArticulo
     Private Sub InitializeComponent()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.lbl_precXUni = New System.Windows.Forms.Label()
-        Me.lbl_precXCaja = New System.Windows.Forms.Label()
         Me.lbl_descripcion = New System.Windows.Forms.Label()
         Me.txt_nomArticulo = New System.Windows.Forms.TextBox()
         Me.txt_descripcion = New System.Windows.Forms.RichTextBox()
         Me.txt_precXUnidad = New System.Windows.Forms.TextBox()
-        Me.txt_precXCaja = New System.Windows.Forms.TextBox()
         Me.btn_add = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.cbo_categorias = New System.Windows.Forms.ComboBox()
@@ -58,16 +56,6 @@ Partial Class frm_addArticulo
         Me.lbl_precXUni.Size = New System.Drawing.Size(103, 26)
         Me.lbl_precXUni.TabIndex = 1
         Me.lbl_precXUni.Text = "*Precio por unidad $" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'lbl_precXCaja
-        '
-        Me.lbl_precXCaja.AutoSize = True
-        Me.lbl_precXCaja.Location = New System.Drawing.Point(216, 118)
-        Me.lbl_precXCaja.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lbl_precXCaja.Name = "lbl_precXCaja"
-        Me.lbl_precXCaja.Size = New System.Drawing.Size(87, 13)
-        Me.lbl_precXCaja.TabIndex = 2
-        Me.lbl_precXCaja.Text = "Precio por caja $"
         '
         'lbl_descripcion
         '
@@ -104,16 +92,9 @@ Partial Class frm_addArticulo
         Me.txt_precXUnidad.Size = New System.Drawing.Size(96, 20)
         Me.txt_precXUnidad.TabIndex = 6
         '
-        'txt_precXCaja
-        '
-        Me.txt_precXCaja.Location = New System.Drawing.Point(310, 115)
-        Me.txt_precXCaja.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_precXCaja.Name = "txt_precXCaja"
-        Me.txt_precXCaja.Size = New System.Drawing.Size(103, 20)
-        Me.txt_precXCaja.TabIndex = 7
-        '
         'btn_add
         '
+        Me.btn_add.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btn_add.Location = New System.Drawing.Point(322, 203)
         Me.btn_add.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_add.Name = "btn_add"
@@ -124,6 +105,7 @@ Partial Class frm_addArticulo
         '
         'btn_cancelar
         '
+        Me.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btn_cancelar.Location = New System.Drawing.Point(204, 203)
         Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_cancelar.Name = "btn_cancelar"
@@ -146,9 +128,9 @@ Partial Class frm_addArticulo
         Me.Label1.Location = New System.Drawing.Point(8, 158)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 13)
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "*Categoría"
+        Me.Label1.Text = "*Modelo"
         '
         'Label2
         '
@@ -190,12 +172,10 @@ Partial Class frm_addArticulo
         Me.Controls.Add(Me.cbo_categorias)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_add)
-        Me.Controls.Add(Me.txt_precXCaja)
         Me.Controls.Add(Me.txt_precXUnidad)
         Me.Controls.Add(Me.txt_descripcion)
         Me.Controls.Add(Me.txt_nomArticulo)
         Me.Controls.Add(Me.lbl_descripcion)
-        Me.Controls.Add(Me.lbl_precXCaja)
         Me.Controls.Add(Me.lbl_precXUni)
         Me.Controls.Add(Me.lbl_nombre)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -207,12 +187,10 @@ Partial Class frm_addArticulo
     End Sub
     Friend WithEvents lbl_nombre As System.Windows.Forms.Label
     Friend WithEvents lbl_precXUni As System.Windows.Forms.Label
-    Friend WithEvents lbl_precXCaja As System.Windows.Forms.Label
     Friend WithEvents lbl_descripcion As System.Windows.Forms.Label
     Friend WithEvents txt_nomArticulo As System.Windows.Forms.TextBox
     Friend WithEvents txt_descripcion As System.Windows.Forms.RichTextBox
     Friend WithEvents txt_precXUnidad As System.Windows.Forms.TextBox
-    Friend WithEvents txt_precXCaja As System.Windows.Forms.TextBox
     Friend WithEvents btn_add As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents cbo_categorias As ComboBox

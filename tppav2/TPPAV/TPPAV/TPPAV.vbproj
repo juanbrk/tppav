@@ -84,6 +84,7 @@
     <Compile Include="BD\DAOs\ClienteDAO.vb" />
     <Compile Include="BD\DAOs\PedidoDAO.vb" />
     <Compile Include="BD\DAOs\ProveedorDAO.vb" />
+    <Compile Include="BD\DAOs\TalleDAO.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +92,15 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modelo\Talle.vb" />
     <Compile Include="Modelo\Usuario.vb" />
+    <Compile Include="Servicios\TalleService.vb" />
+    <Compile Include="Vista\Articulo\frm_listarArticulo.Designer.vb">
+      <DependentUpon>frm_listarArticulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Articulo\frm_listarArticulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Barrio\frm_addBarrio.Designer.vb">
       <DependentUpon>frm_addBarrio.vb</DependentUpon>
     </Compile>
@@ -108,6 +117,18 @@
       <DependentUpon>frm_estadisticas.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Estadisticas\frm_estadisticas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\frm_estadisticas_articulos.Designer.vb">
+      <DependentUpon>frm_estadisticas_articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\frm_estadisticas_articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\frm_estadisticas_barrios.Designer.vb">
+      <DependentUpon>frm_estadisticas_barrios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\frm_estadisticas_barrios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Pedido\frm_addDetalle.Designer.vb">
@@ -187,6 +208,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Reportes\DataSet1.vb">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Reportes\frm_rep.Designer.vb">
       <DependentUpon>frm_rep.vb</DependentUpon>
     </Compile>
@@ -223,16 +247,28 @@
     <Compile Include="Servicios\ProveedorService.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Vista\Articulo\frm_listarArticulo.resx">
+      <DependentUpon>frm_listarArticulo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Barrio\frm_addBarrio.resx">
       <DependentUpon>frm_addBarrio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cliente\frm_addClientes.resx">
       <DependentUpon>frm_addClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estadisticas\articulos.rdlc" />
     <EmbeddedResource Include="Vista\Estadisticas\frm_estadisticas.resx">
       <DependentUpon>frm_estadisticas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estadisticas\frm_estadisticas_articulos.resx">
+      <DependentUpon>frm_estadisticas_articulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estadisticas\frm_estadisticas_barrios.resx">
+      <DependentUpon>frm_estadisticas_barrios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estadisticas\Report1.rdlc" />
     <EmbeddedResource Include="Vista\Estadisticas\Report2.rdlc" />
+    <EmbeddedResource Include="Vista\Estadisticas\Report3.rdlc" />
     <EmbeddedResource Include="Vista\Pedido\frm_addDetalle.resx">
       <DependentUpon>frm_addDetalle.vb</DependentUpon>
     </EmbeddedResource>
@@ -272,7 +308,6 @@
     <EmbeddedResource Include="Vista\Reportes\frm_rep.resx">
       <DependentUpon>frm_rep.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Reportes\Report1.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

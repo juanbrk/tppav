@@ -1,7 +1,10 @@
 ﻿Imports System.ComponentModel
+Imports TPPAV
 
 Public Class frm_addArticulo
     Dim cerrar As Boolean = False
+    Dim bandera As Boolean = True
+    Dim articulo As New Articulo
     Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
         cerrar = False
         Me.Close()
@@ -33,7 +36,7 @@ Public Class frm_addArticulo
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
         cerrar = True
-        Dim articulo As New Articulo
+
         'primero validaciones de campos obligatorios
         If txt_nomArticulo.Text = String.Empty Then
             MsgBox("Debe ingresar un nombre de artículo", MsgBoxStyle.Information, "Faltan datos")
@@ -64,21 +67,49 @@ Public Class frm_addArticulo
 
         If Not cbo_proveedores.SelectedIndex = -1 Then
             articulo.proveedor = cbo_proveedores.SelectedItem
+        Else
+            articulo.proveedor = Nothing
         End If
 
-        If txt_precXCaja.Text = String.Empty Then
-            articulo.precioCaja = 0.0
-        Else
-            articulo.precioCaja = Double.Parse(txt_precXCaja.Text)
-        End If
 
         Dim service As New ArticuloService
-        If service.agregarArticulo(articulo) = 1 Then
-            MsgBox("Se ha agregado el artículo con éxito", MsgBoxStyle.Information, "Sistema")
-            cerrar = False
-            Me.Close()
+        If bandera Then
+            Try
+                'agregamos un NUEVO cliente, por la bandera nos dimos cuenta que habia que agregarlo'
+                If service.agregarArticulo(articulo) = 1 Then
+                    MsgBox("Articulo agregado con éxito")
+                    cerrar = False
+                End If
+                'refrescamos la grilla del listar clientes y la hacemos visible'
+
+            Catch ex As Exception
+                MsgBox("Error al agregar el articulo", MsgBoxStyle.OkOnly, "Base de Datos")
+                Return
+            End Try
         Else
-            MsgBox("No se ha podido agregar el artículo", MsgBoxStyle.Exclamation, "Sistema")
+            Try
+
+                If service.updateArticulo(articulo) = 1 Then
+                    MsgBox("Articulo actualizado con éxito")
+                    cerrar = False
+                End If
+                'volvemos a setear la bandera a true, que seria el modo añadir'
+                'bandera = True no es necesario
+
+            Catch ex As Exception
+                MsgBox("Error al actualizar el articulo", MsgBoxStyle.OkOnly, "Base de Datos")
+                Return
+            End Try
         End If
+        Me.Close()
+    End Sub
+
+    Friend Sub modoEditar(art As Articulo)
+        bandera = False
+
+        articulo = art
+        txt_nomArticulo.Text = art.nombre
+        txt_descripcion.Text = art.descripcion
+        txt_precXUnidad.Text = art.precioU.ToString
     End Sub
 End Class

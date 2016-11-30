@@ -23,8 +23,6 @@ Partial Class frm_rep
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -37,19 +35,17 @@ Partial Class frm_rep
         Me.btn_clientes = New System.Windows.Forms.Button()
         Me.cbo_clientes = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.rpt = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.DataSet1 = New TPPAV.DataSet1()
         Me.Pedido2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Pedido2TableAdapter = New TPPAV.DataSet1TableAdapters.Pedido2TableAdapter()
         Me.btn_cerrar = New System.Windows.Forms.Button()
-        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgv_rep = New System.Windows.Forms.DataGridView()
+        Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_rep, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PedidoBindingSource
-        '
-        Me.PedidoBindingSource.DataSource = GetType(TPPAV.Pedido)
         '
         'Label7
         '
@@ -156,19 +152,6 @@ Partial Class frm_rep
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "-Cliente"
         '
-        'rpt
-        '
-        Me.rpt.AutoSize = True
-        ReportDataSource1.Name = "DataSet2"
-        ReportDataSource1.Value = Me.PedidoBindingSource
-        Me.rpt.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.rpt.LocalReport.ReportEmbeddedResource = "TPPAV.Report1.rdlc"
-        Me.rpt.Location = New System.Drawing.Point(82, 245)
-        Me.rpt.Name = "rpt"
-        Me.rpt.Size = New System.Drawing.Size(674, 309)
-        Me.rpt.TabIndex = 26
-        Me.rpt.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth
-        '
         'DataSet1
         '
         Me.DataSet1.DataSetName = "DataSet1"
@@ -192,13 +175,30 @@ Partial Class frm_rep
         Me.btn_cerrar.Text = "Cerrar"
         Me.btn_cerrar.UseVisualStyleBackColor = True
         '
+        'dgv_rep
+        '
+        Me.dgv_rep.AllowUserToAddRows = False
+        Me.dgv_rep.AllowUserToDeleteRows = False
+        Me.dgv_rep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_rep.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgv_rep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_rep.Location = New System.Drawing.Point(53, 285)
+        Me.dgv_rep.Name = "dgv_rep"
+        Me.dgv_rep.ReadOnly = True
+        Me.dgv_rep.Size = New System.Drawing.Size(727, 298)
+        Me.dgv_rep.TabIndex = 28
+        '
+        'PedidoBindingSource
+        '
+        Me.PedidoBindingSource.DataSource = GetType(TPPAV.Pedido)
+        '
         'frm_rep
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(855, 641)
+        Me.Controls.Add(Me.dgv_rep)
         Me.Controls.Add(Me.btn_cerrar)
-        Me.Controls.Add(Me.rpt)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -213,9 +213,10 @@ Partial Class frm_rep
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_rep"
         Me.Text = "Reportes de Pedidos"
-        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_rep, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -232,10 +233,10 @@ Partial Class frm_rep
     Friend WithEvents btn_clientes As Button
     Friend WithEvents cbo_clientes As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents rpt As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents Pedido2BindingSource As BindingSource
     Friend WithEvents DataSet1 As DataSet1
     Friend WithEvents Pedido2TableAdapter As DataSet1TableAdapters.Pedido2TableAdapter
     Friend WithEvents PedidoBindingSource As BindingSource
     Friend WithEvents btn_cerrar As Button
+    Friend WithEvents dgv_rep As DataGridView
 End Class

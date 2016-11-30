@@ -149,13 +149,13 @@ Public Class PedidoDAO
         Return listaPedidos
     End Function
     Friend Function getAllDeCliente(ByVal id As String) As DataTable
-        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT p.*,(c.Nombre + ' ' + c.Apellido) as Nombre, u.Nombre as NombreU FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id JOIN Usuarios ON p.idUsuario=u.idUsuario WHERE p.Cliente_id=" + id)
+        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT p.Fecha_entrega as 'Fecha Entrega', p.Total as 'Total Pesos',p.Nro_factura,p.Terminado,p.Descuento,p.Extra1,p.Extra2,(c.Nombre + ' ' + c.Apellido) as Nombre, u.Nombre as Creador FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id JOIN Usuarios u ON p.idUsuario=u.idUsuario WHERE p.Cliente_id=" + id)
 
         Return data
     End Function
 
     Friend Function getAllEntreFechas(ByVal desde As String, ByVal hasta As String) As DataTable
-        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT p.*,(c.Nombre + ' ' + c.Apellido) as Nombre, u.Nombre as NombreU FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id JOIN Usuarios ON p.idUsuario=u.idUsuario WHERE p.Fecha_entrega BETWEEN '" + desde + "' AND '" + hasta + "'")
+        Dim data As DataTable = BdHelper.getDBHelper.ConsultaSQL("SELECT p.Fecha_entrega as 'Fecha Entrega', p.Total as 'Total Pesos',p.Nro_factura,p.Terminado,p.Descuento,p.Extra1,p.Extra2,(c.Nombre + ' ' + c.Apellido) as Nombre, u.Nombre as Creador FROM Pedido p JOIN Clientes c ON p.Cliente_id=c.Cliente_id JOIN Usuarios u ON p.idUsuario=u.idUsuario WHERE p.Fecha_entrega BETWEEN '" + desde + "' AND '" + hasta + "'")
 
         Return data
     End Function

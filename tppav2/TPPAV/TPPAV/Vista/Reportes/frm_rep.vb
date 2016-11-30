@@ -14,10 +14,9 @@ Public Class frm_rep
         Dim cli As Cliente = cbo_clientes.SelectedItem
 
         'rpt.LocalReport.SetParameters({New ReportParameter("cid", cli.fullname.ToString)})
-        rpt.LocalReport.DataSources.Clear()
+        dgv_rep.DataSource = ""
         Dim ser As New PedidoService
-        rpt.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", ser.listarPedidosDeCliente(cli.idCliente.ToString)))
-        rpt.RefreshReport()
+        dgv_rep.DataSource = ser.listarPedidosDeCliente(cli.idCliente.ToString)
 
     End Sub
 
@@ -26,16 +25,15 @@ Public Class frm_rep
         ' Me.Pedido2TableAdapter(DataSet1.Pedido2)
         'DataSet1.Pedido2.
         cargarClientes()
-        Me.rpt.RefreshReport()
+
     End Sub
 
     Private Sub btn_fechas_Click(sender As Object, e As EventArgs) Handles btn_fechas.Click
-        rpt.LocalReport.DataSources.Clear()
+        dgv_rep.DataSource = ""
         Dim ser As New PedidoService
         Dim desde As String = dtp_desde.Value.Month.ToString + "/" + dtp_desde.Value.Day.ToString + "/" + dtp_desde.Value.Year.ToString
         Dim hasta As String = dtp_hasta.Value.Month.ToString + "/" + dtp_hasta.Value.Day.ToString + "/" + dtp_hasta.Value.Year.ToString
-        rpt.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", ser.listarPedidosEntreFechas(desde, hasta)))
-        rpt.RefreshReport()
+        dgv_rep.DataSource = ser.listarPedidosEntreFechas(desde, hasta)
     End Sub
 
     Private Sub btn_cerrar_Click(sender As Object, e As EventArgs) Handles btn_cerrar.Click

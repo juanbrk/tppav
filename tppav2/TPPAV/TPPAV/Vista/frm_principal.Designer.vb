@@ -27,6 +27,7 @@ Partial Class frm_principal
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AñadirNuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListarTerminadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AñadirNuevoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarTodosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,11 +50,11 @@ Partial Class frm_principal
         Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet1 = New TPPAV.DataSet1()
         Me.PedidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PedidoTableAdapter = New TPPAV.DataSet1TableAdapters.PedidoTableAdapter()
         Me.DataTable1TableAdapter = New TPPAV.DataSet1TableAdapters.DataTable1TableAdapter()
         Me.Pedido2TableAdapter1 = New TPPAV.DataSet1TableAdapters.Pedido2TableAdapter()
         Me.Pedido2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ListarTerminadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +90,12 @@ Partial Class frm_principal
         Me.ListarTodosToolStripMenuItem.Name = "ListarTodosToolStripMenuItem"
         Me.ListarTodosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.ListarTodosToolStripMenuItem.Text = "Listar activos"
+        '
+        'ListarTerminadosToolStripMenuItem
+        '
+        Me.ListarTerminadosToolStripMenuItem.Name = "ListarTerminadosToolStripMenuItem"
+        Me.ListarTerminadosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.ListarTerminadosToolStripMenuItem.Text = "Listar terminados"
         '
         'ClientesToolStripMenuItem
         '
@@ -189,27 +196,27 @@ Partial Class frm_principal
         '
         Me.Button1.Location = New System.Drawing.Point(55, 194)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(195, 84)
+        Me.Button1.Size = New System.Drawing.Size(141, 42)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Reportes"
+        Me.Button1.Text = "Reportes de pedidos"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(335, 194)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(195, 84)
+        Me.Button2.Size = New System.Drawing.Size(130, 42)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Estadísticas"
+        Me.Button2.Text = "Estadísticas de pedidos"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(59, 90)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(41, 39)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(155, 31)
+        Me.Label1.Size = New System.Drawing.Size(140, 29)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Bienvenido "
         '
@@ -217,7 +224,7 @@ Partial Class frm_principal
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(329, 90)
+        Me.Label2.Location = New System.Drawing.Point(262, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 31)
         Me.Label2.TabIndex = 4
@@ -238,10 +245,6 @@ Partial Class frm_principal
         Me.PedidoBindingSource.DataMember = "Pedido"
         Me.PedidoBindingSource.DataSource = Me.DataSet1
         '
-        'PedidoTableAdapter
-        '
-        Me.PedidoTableAdapter.ClearBeforeFill = True
-        '
         'DataTable1TableAdapter
         '
         Me.DataTable1TableAdapter.ClearBeforeFill = True
@@ -255,11 +258,23 @@ Partial Class frm_principal
         Me.Pedido2BindingSource.DataMember = "Pedido2"
         Me.Pedido2BindingSource.DataSource = Me.DataSet1
         '
-        'ListarTerminadosToolStripMenuItem
+        'Button3
         '
-        Me.ListarTerminadosToolStripMenuItem.Name = "ListarTerminadosToolStripMenuItem"
-        Me.ListarTerminadosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.ListarTerminadosToolStripMenuItem.Text = "Listar terminados"
+        Me.Button3.Location = New System.Drawing.Point(335, 256)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(130, 42)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Estadísticas de zonas"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(55, 256)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(141, 42)
+        Me.Button4.TabIndex = 6
+        Me.Button4.Text = "Estadísticas de artículos"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'frm_principal
         '
@@ -267,6 +282,8 @@ Partial Class frm_principal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.ClientSize = New System.Drawing.Size(569, 340)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
@@ -279,8 +296,6 @@ Partial Class frm_principal
         Me.MenuStrip1.PerformLayout()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PedidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Pedido2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -307,7 +322,6 @@ Partial Class frm_principal
     Friend WithEvents ListarTodosToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents PedidoBindingSource As BindingSource
     Friend WithEvents DataSet1 As DataSet1
-    Friend WithEvents PedidoTableAdapter As DataSet1TableAdapters.PedidoTableAdapter
     Friend WithEvents DataTable1BindingSource As BindingSource
     Friend WithEvents DataTable1TableAdapter As DataSet1TableAdapters.DataTable1TableAdapter
     Friend WithEvents Pedido2TableAdapter1 As DataSet1TableAdapters.Pedido2TableAdapter
@@ -317,4 +331,6 @@ Partial Class frm_principal
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents ListarTerminadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

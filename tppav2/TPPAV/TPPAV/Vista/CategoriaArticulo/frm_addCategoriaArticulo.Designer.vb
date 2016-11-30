@@ -37,7 +37,7 @@ Partial Class frm_addCategoriaArticulo
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(112, 25)
         Me.btn_add.TabIndex = 0
-        Me.btn_add.Text = "Agregar categoria"
+        Me.btn_add.Text = "Agregar modelo"
         Me.btn_add.UseVisualStyleBackColor = True
         '
         'btn_cancelar
@@ -73,9 +73,9 @@ Partial Class frm_addCategoriaArticulo
         Me.lbl_nomCat.Location = New System.Drawing.Point(10, 11)
         Me.lbl_nomCat.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lbl_nomCat.Name = "lbl_nomCat"
-        Me.lbl_nomCat.Size = New System.Drawing.Size(91, 13)
+        Me.lbl_nomCat.Size = New System.Drawing.Size(81, 13)
         Me.lbl_nomCat.TabIndex = 4
-        Me.lbl_nomCat.Text = "Nombre categoria"
+        Me.lbl_nomCat.Text = "Nombre modelo"
         '
         'lbl_descripcion
         '
@@ -100,7 +100,7 @@ Partial Class frm_addCategoriaArticulo
         Me.Controls.Add(Me.btn_add)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frm_addCategoriaArticulo"
-        Me.Text = "Agregar nueva categoria de articulo"
+        Me.Text = "Agregar nuevo modelo de articulo"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

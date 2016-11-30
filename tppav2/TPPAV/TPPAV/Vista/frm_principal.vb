@@ -27,6 +27,8 @@
     End Sub
 
     Private Sub ListarTodosToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ListarTodosToolStripMenuItem2.Click
+        Dim listar As New frm_listarArticulo
+        listar.ShowDialog()
         'listar articulos
     End Sub
 
@@ -88,5 +90,15 @@
     Private Sub ListarTerminadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarTerminadosToolStripMenuItem.Click
         Dim listar As frm_listarPedidosTerminados = New frm_listarPedidosTerminados
         listar.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim est As New frm_estadisticas_barrios
+        est.ShowDialog()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim est As New frm_estadisticas_articulos
+        est.ShowDialog()
     End Sub
 End Class

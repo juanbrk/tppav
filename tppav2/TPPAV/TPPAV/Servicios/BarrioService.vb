@@ -23,4 +23,8 @@
         Return barrdao.updateBarrio(unBarrio)
     End Function
 
+    Public Function ventasXBarrioXMes(ByVal mes As String, ByVal año As String) As DataTable
+        Return barrdao.ventasXBarrioXMes(mes, año)
+    End Function
+
 End Class

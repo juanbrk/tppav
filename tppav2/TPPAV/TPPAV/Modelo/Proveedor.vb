@@ -4,4 +4,8 @@
     Public Property direccion As String
     Public Property email As String
     Public Property telefono As String
+
+    Public Overrides Function toString() As String
+        Return razon_social
+    End Function
 End Class
