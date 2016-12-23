@@ -11,4 +11,12 @@
     Public Function addCategoria(ByVal cat As CategoriaArt)
         Return catDao.add(cat)
     End Function
+
+    Public Function eliminarCategoria(ByVal catid As Integer)
+        Return catDao.eliminar(catid)
+    End Function
+
+    Public Function updateCategoria(ByVal cat As CategoriaArt)
+        Return catDao.update(cat)
+    End Function
 End Class

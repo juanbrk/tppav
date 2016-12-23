@@ -107,6 +107,12 @@
     <Compile Include="Vista\Barrio\frm_addBarrio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\CategoriaArticulo\frm_listarCategoria.Designer.vb">
+      <DependentUpon>frm_listarCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CategoriaArticulo\frm_listarCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Cliente\frm_addClientes.Designer.vb">
       <DependentUpon>frm_addClientes.vb</DependentUpon>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Barrio\frm_addBarrio.resx">
       <DependentUpon>frm_addBarrio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\CategoriaArticulo\frm_listarCategoria.resx">
+      <DependentUpon>frm_listarCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cliente\frm_addClientes.resx">
       <DependentUpon>frm_addClientes.vb</DependentUpon>

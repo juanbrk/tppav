@@ -15,7 +15,7 @@
         Return artDao.getIdNuevoArticulo()
     End Function
 
-    Public Function darDeBajaBarrio(id As Integer) As Integer
+    Public Function darDeBajaArticulo(id As Integer) As Integer
         Return artDao.darDeBaja(id)
     End Function
 

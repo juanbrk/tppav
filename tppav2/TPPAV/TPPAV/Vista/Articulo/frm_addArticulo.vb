@@ -26,6 +26,14 @@ Public Class frm_addArticulo
         cbo_proveedores.ValueMember = "idProveedor"
 
         cbo_proveedores.SelectedIndex = -1
+
+        Dim servicetal As New TalleService
+        Dim talles As List(Of Talle) = servicetal.getall
+        cbo_talles.DataSource = talles
+        cbo_talles.DisplayMember = "nombre"
+        cbo_talles.ValueMember = "idTalle"
+
+        cbo_talles.SelectedIndex = -1
         cerrar = True
     End Sub
 
@@ -39,14 +47,14 @@ Public Class frm_addArticulo
 
         'primero validaciones de campos obligatorios
         If txt_nomArticulo.Text = String.Empty Then
-            MsgBox("Debe ingresar un nombre de artículo", MsgBoxStyle.Information, "Faltan datos")
+            MsgBox("Debe ingresar un nombre de artículo", MsgBoxStyle.Information, "Gestor de artículos")
             Return
         Else
             articulo.nombre = txt_nomArticulo.Text
         End If
 
         If txt_precXUnidad.Text = String.Empty Then
-            MsgBox("Debe ingresar un precio unitario de artículo", MsgBoxStyle.Information, "Faltan datos")
+            MsgBox("Debe ingresar un precio unitario de artículo", MsgBoxStyle.Information, "Gestor de artículos")
             Return
         Else
             articulo.precioU = Double.Parse(txt_precXUnidad.Text)
@@ -59,7 +67,7 @@ Public Class frm_addArticulo
         End If
 
         If cbo_categorias.SelectedIndex = -1 Then
-            MsgBox("Debe seleccionar una categoría", MsgBoxStyle.Information, "Faltan datos")
+            MsgBox("Debe seleccionar una categoría", MsgBoxStyle.Information, "Gestor de artículos")
             Return
         Else
             articulo.categoria = cbo_categorias.SelectedItem
@@ -71,13 +79,19 @@ Public Class frm_addArticulo
             articulo.proveedor = Nothing
         End If
 
+        If cbo_talles.SelectedIndex = -1 Then
+            MsgBox("Debe seleccionar un talle", MsgBoxStyle.Information, "Gestor de artículos")
+            Return
+        Else
+            articulo.talle = cbo_talles.SelectedItem
+        End If
 
         Dim service As New ArticuloService
         If bandera Then
             Try
                 'agregamos un NUEVO cliente, por la bandera nos dimos cuenta que habia que agregarlo'
                 If service.agregarArticulo(articulo) = 1 Then
-                    MsgBox("Articulo agregado con éxito")
+                    MsgBox("Articulo agregado con éxito", MsgBoxStyle.Information, "Gestor de artículos")
                     cerrar = False
                 End If
                 'refrescamos la grilla del listar clientes y la hacemos visible'
@@ -90,7 +104,7 @@ Public Class frm_addArticulo
             Try
 
                 If service.updateArticulo(articulo) = 1 Then
-                    MsgBox("Articulo actualizado con éxito")
+                    MsgBox("Articulo actualizado con éxito", MsgBoxStyle.Information, "Gestor de artículos")
                     cerrar = False
                 End If
                 'volvemos a setear la bandera a true, que seria el modo añadir'

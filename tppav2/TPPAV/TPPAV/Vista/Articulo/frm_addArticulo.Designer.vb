@@ -35,6 +35,8 @@ Partial Class frm_addArticulo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbo_proveedores = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbo_talles = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'lbl_nombre
@@ -128,14 +130,14 @@ Partial Class frm_addArticulo
         Me.Label1.Location = New System.Drawing.Point(8, 158)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.Size = New System.Drawing.Size(56, 13)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "*Modelo"
+        Me.Label1.Text = "*Categoria"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(220, 158)
+        Me.Label2.Location = New System.Drawing.Point(219, 158)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(56, 13)
@@ -145,7 +147,7 @@ Partial Class frm_addArticulo
         'cbo_proveedores
         '
         Me.cbo_proveedores.FormattingEnabled = True
-        Me.cbo_proveedores.Location = New System.Drawing.Point(296, 155)
+        Me.cbo_proveedores.Location = New System.Drawing.Point(302, 155)
         Me.cbo_proveedores.Name = "cbo_proveedores"
         Me.cbo_proveedores.Size = New System.Drawing.Size(121, 21)
         Me.cbo_proveedores.TabIndex = 13
@@ -160,11 +162,31 @@ Partial Class frm_addArticulo
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Los campos con * son obligatorios"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(219, 117)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(34, 13)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "*Talle"
+        '
+        'cbo_talles
+        '
+        Me.cbo_talles.FormattingEnabled = True
+        Me.cbo_talles.Location = New System.Drawing.Point(302, 114)
+        Me.cbo_talles.Name = "cbo_talles"
+        Me.cbo_talles.Size = New System.Drawing.Size(121, 21)
+        Me.cbo_talles.TabIndex = 15
+        '
         'frm_addArticulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(469, 253)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.cbo_talles)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cbo_proveedores)
         Me.Controls.Add(Me.Label2)
@@ -198,4 +220,6 @@ Partial Class frm_addArticulo
     Friend WithEvents Label2 As Label
     Friend WithEvents cbo_proveedores As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cbo_talles As ComboBox
 End Class

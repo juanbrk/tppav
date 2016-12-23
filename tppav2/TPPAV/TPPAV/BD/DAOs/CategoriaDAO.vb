@@ -25,12 +25,30 @@ Public Class CategoriaDAO
         Return listaCategorias
     End Function
 
+    Friend Function update(cat As CategoriaArt) As Object
+        Dim str = "UPDATE Categoria_articulo SET Nombre='" + cat.nombre + "',Descripcion='" + cat.descripcion + "' WHERE Id_categoria=" + cat.idCat.ToString
+        Try
+            Return BdHelper.getDBHelper.ejecutarSQL(str)
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
+
+    Friend Function eliminar(catid As Integer) As Object
+        Dim str As String = "DELETE FROM Categoria_articulo WHERE Id_categoria=" + catid.ToString
+        Try
+            Return BdHelper.getDBHelper.ejecutarSQL(str)
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
+
     Friend Function add(cat As CategoriaArt) As Object
         Dim strsql As String = "INSERT INTO Categoria_articulo (Nombre,Descripcion) VALUES ('" & cat.nombre & "','" + cat.descripcion + "')"
         Try
             Return BdHelper.getDBHelper().ejecutarSQL(strsql)
         Catch ex As Exception
-            Throw ex
+            Return 0
         End Try
     End Function
 End Class

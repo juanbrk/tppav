@@ -27,7 +27,8 @@
         dgv_articulos.Columns.Item(1).DataPropertyName = "nombre"
         dgv_articulos.Columns.Item(2).DataPropertyName = "descripcion"
         dgv_articulos.Columns.Item(3).DataPropertyName = "precioU"
-        dgv_articulos.Columns.Item(4).DataPropertyName = "proveedor"
+        dgv_articulos.Columns.Item(4).DataPropertyName = "talle"
+        dgv_articulos.Columns.Item(5).DataPropertyName = "proveedor"
     End Sub
 
     Private Sub btn_add_Click(sender As Object, e As EventArgs) Handles btn_add.Click
@@ -54,5 +55,20 @@
 
     Private Sub btn_exit_Click(sender As Object, e As EventArgs) Handles btn_exit.Click
         Me.Close()
+    End Sub
+
+    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+        If dgv_articulos.CurrentRow.DataBoundItem Is Nothing Then
+            MsgBox("Debe seleccionar un articulo para eliminarlo", MsgBoxStyle.Exclamation, "Gestor de articulos")
+        Else
+            Dim art As Articulo = dgv_articulos.CurrentRow.DataBoundItem
+            Dim service As New ArticuloService
+            If service.darDeBajaArticulo(art.idArticulo) = 1 Then
+                MsgBox("Artículo eliminado con éxito", MsgBoxStyle.Information, "Gestor de articulos")
+                Me.cargarArticulos()
+            Else
+                MsgBox("No se pudo eliminar el articulo, probablemente este relacionado con un pedido", MsgBoxStyle.Information, "Gestor de articulos")
+            End If
+        End If
     End Sub
 End Class

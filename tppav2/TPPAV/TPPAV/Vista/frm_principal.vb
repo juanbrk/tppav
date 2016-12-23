@@ -38,7 +38,8 @@
     End Sub
 
     Private Sub ListarTodosToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ListarTodosToolStripMenuItem3.Click
-        'listar categorias
+        Dim listar As New frm_listarCategoria
+        listar.ShowDialog()
     End Sub
 
     Private Sub AñadirNuevoToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles AñadirNuevoToolStripMenuItem4.Click
